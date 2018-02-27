@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/MattedCrow/Source/Repos/Group-4-Capstone-Project/concept_0_03/Content/Menu/Red/red_tick.png</SourceFile>
+  <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Menu/Red/red_tick.png</SourceFile>
   <SourceTime>2018-02-20T21:47:57.4159318-05:00</SourceTime>
-  <DestFile>C:/Users/MattedCrow/Source/Repos/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/Menu/Red/red_tick.xnb</DestFile>
-  <DestTime>2018-02-26T23:00:53.1487862-05:00</DestTime>
+  <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/Menu/Red/red_tick.xnb</DestFile>
+  <DestTime>2018-02-26T23:41:39.9168947-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
