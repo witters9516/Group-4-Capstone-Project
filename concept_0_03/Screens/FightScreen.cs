@@ -13,6 +13,7 @@ namespace concept_0_03
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
         private bool isMusicOn;
+        private bool wasOptionsOpened;
 
         private List<Component> m_components;
         private SoundEffect click;
@@ -67,36 +68,36 @@ namespace concept_0_03
             #endregion
 
             #region Answer Button 1
-            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button00"), content.Load<SpriteFont>("Fonts/Font"))
+            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
-                Position = new Vector2(275, 200),
+                Position = new Vector2(305, 200),
                 Text = optionOne,
             };
 
             answerButton1.Click += AnswerButton1_Click;
             #endregion
             #region Answer Button 2
-            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Red/red_button00"), content.Load<SpriteFont>("Fonts/Font"))
+            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Blue/blue_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
-                Position = new Vector2(175, 250),
+                Position = new Vector2(205, 250),
                 Text = optionTwo,
             };
 
             answerButton2.Click += AnswerButton2_Click;
             #endregion
             #region Answer Button 3
-            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Red/red_button00"), content.Load<SpriteFont>("Fonts/Font"))
+            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Blue/Blue_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
-                Position = new Vector2(375, 250),
+                Position = new Vector2(405, 250),
                 Text = optionThree,
             };
 
             answerButton3.Click += AnswerButton3_Click;
             #endregion
             #region Answer Button 4
-            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button00"), content.Load<SpriteFont>("Fonts/Font"))
+            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
-                Position = new Vector2(275, 300),
+                Position = new Vector2(305, 300),
                 Text = optionFour,
             };
 

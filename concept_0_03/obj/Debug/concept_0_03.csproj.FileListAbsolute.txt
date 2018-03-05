@@ -370,23 +370,17 @@ C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\D
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button03.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button04.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button05.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button06.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button07.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button08.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button09.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button10.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button11.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button12.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_button13.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_checkmark.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_circle.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_cross.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_panel.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderDown.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderLeft.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderRight.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderUp.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_tick.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Grey\grey_arrowDownGrey.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Grey\grey_arrowDownWhite.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Grey\grey_arrowUpGrey.xnb
@@ -436,23 +430,17 @@ C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\D
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button03.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button04.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button05.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button06.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button07.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button08.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button09.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button10.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button11.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button12.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_button13.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_checkmark.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_circle.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_cross.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_panel.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_sliderDown.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_sliderLeft.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_sliderRight.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_sliderUp.xnb
-C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Blue\blue_tick.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Bit Quest.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Carpe Diem.xnb
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Off to Osaka.xnb

@@ -20,6 +20,8 @@ namespace concept_0_03
         private SoundEffect bgSong;
         private SoundEffectInstance bgMusic;
         private bool isMusicStopped = false;
+        private bool wasOptionsOpen = false;
+        private bool wasFightOpen = false;
 
         private Player _player;
         private Sprite obstacle;
@@ -113,11 +115,21 @@ namespace concept_0_03
 
                 Player.Position = new Vector2(Player.Position.X + 5, Player.Position.Y);
                 Obstacle.Position = new Vector2(-30, -50);
+
+                wasFightOpen = true;
             }
 
-            if (isMusicStopped == true)
+            if (isMusicStopped == true && wasFightOpen == true)
             {
                 isMusicStopped = false;
+                wasFightOpen = false;
+                bgMusic.Resume();
+            }
+
+            if (isMusicStopped == true && wasOptionsOpen == true)
+            {
+                isMusicStopped = false;
+                wasOptionsOpen = false;
                 bgMusic.Resume();
             }
 
@@ -216,6 +228,7 @@ namespace concept_0_03
             {
                 bgMusic.Pause();
                 isMusicStopped = true;
+                wasOptionsOpen = true;
 
                 m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
             }

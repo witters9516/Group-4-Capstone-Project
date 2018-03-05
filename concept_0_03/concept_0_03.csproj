@@ -57,6 +57,7 @@
     <Compile Include="Sprites\Sprite.cs" />
     <Compile Include="Core\Text.cs" />
     <Compile Include="Core\Utility.cs" />
+    <Compile Include="WorldMapScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

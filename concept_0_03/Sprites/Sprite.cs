@@ -12,6 +12,8 @@ namespace concept_0_03
         public Vector2 Velocity = new Vector2();
         public float Speed;
 
+        public Color Colour = Color.White;
+
         public Rectangle Rectangle
         {
             get { return new Rectangle((int)Position.X, (int)Position.Y, _texture.Width, _texture.Height); }
@@ -20,7 +22,7 @@ namespace concept_0_03
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, Position, Color.White);
+            spriteBatch.Draw(_texture, Position, Colour);
         }
 
         public Sprite(Texture2D texture)

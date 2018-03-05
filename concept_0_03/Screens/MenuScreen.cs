@@ -49,7 +49,7 @@ namespace concept_0_03
             bgMusic.Play();
 
             #region Title Stuff
-            string titleText = "GAME TITLE HERE";
+            string titleText = "Japakeys";
             var x = (800 / 2) - (m_font.MeasureString(titleText).X / 2);
             var y = 100;
             Vector2 m_textPosition = new Vector2(x, y);
@@ -60,7 +60,7 @@ namespace concept_0_03
 
             #region Button Variables
 
-            var buttonTexture = content.Load<Texture2D>("Menu/Grey/grey_button00");
+            var buttonTexture = content.Load<Texture2D>("Menu/Grey/grey_button04");
             var buttonFont = content.Load<SpriteFont>("Fonts/Font");
 
             #endregion
@@ -69,7 +69,7 @@ namespace concept_0_03
 
             var newGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 200),
+                Position = new Vector2(305, 200),
                 Text = "New Game",
             };
 
@@ -80,7 +80,7 @@ namespace concept_0_03
 
             var loadGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 250),
+                Position = new Vector2(305, 250),
                 Text = "Load Game",
             };
 
@@ -91,7 +91,7 @@ namespace concept_0_03
 
             var optionsGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 300),
+                Position = new Vector2(305, 300),
                 Text = "Options",
             };
 
@@ -102,7 +102,7 @@ namespace concept_0_03
 
             var quitGameButton = new Button(buttonTexture, buttonFont)
             {
-                Position = new Vector2(300, 350),
+                Position = new Vector2(305, 350),
                 Text = "Quit",
             };
 
@@ -124,7 +124,7 @@ namespace concept_0_03
         {
             click.Play();
             bgMusic.Stop();
-            m_ScreenManager.ChangeScreen(new LevelOneScreen(m_ScreenManager));
+            m_ScreenManager.ChangeScreen(new WorldMapScreen(m_ScreenManager));
         }
 
         private void LoadGameButton_Click(object sender, EventArgs e)

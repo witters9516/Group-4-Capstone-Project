@@ -65,7 +65,7 @@ namespace concept_0_03
             // TODO: Add your drawing code here
             m_screenManager.Draw(gameTime);
 
-            Window.Title = "Game Title Here???";
+            Window.Title = "Japakeys";
 
             base.Draw(gameTime);
         }
