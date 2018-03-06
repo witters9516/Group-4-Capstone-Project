@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -55,13 +52,13 @@ namespace concept_0_03
             SpriteFont m_font = content.Load<SpriteFont>("Fonts/Font");
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
-            bgSong = content.Load<SoundEffect>("Music/Bit Quest");
+            bgSong = content.Load<SoundEffect>("Music/Carpe Diem");
             bgMusic = bgSong.CreateInstance();
 
             bgMusic.IsLooped = true;
             bgMusic.Play();
 
-            Player = new Player(content.Load<Texture2D>("block"));
+            Player = new Player(Game1.activePlayerTexture);
             LevelOne = new Sprite(content.Load<Texture2D>("block"));
 
             LevelOne.Position = new Vector2(100,100);

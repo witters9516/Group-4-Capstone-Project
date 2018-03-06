@@ -98,5 +98,12 @@
     <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/block.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/collision_wall.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/collision_wall_transparent.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player01_Front.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player02_Front.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player03_Front.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player01_port.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player02_port.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Player/player03_port.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/fighttextbox_notail.png</File>
   </SourceFiles>
 </SourceFileCollection>

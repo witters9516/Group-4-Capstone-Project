@@ -124,7 +124,7 @@ namespace concept_0_03
         {
             click.Play();
             bgMusic.Stop();
-            m_ScreenManager.ChangeScreen(new WorldMapScreen(m_ScreenManager));
+            m_ScreenManager.ChangeScreen(new CharacterSelectionScreen(m_ScreenManager));
         }
 
         private void LoadGameButton_Click(object sender, EventArgs e)

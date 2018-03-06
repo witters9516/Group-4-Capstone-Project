@@ -78,7 +78,7 @@ namespace concept_0_03
             bgMusic.IsLooped = true;
             bgMusic.Play();
 
-            Player = new Player(content.Load<Texture2D>("block"));
+            Player = new Player(Game1.activePlayerTexture);
             Obstacle = new Sprite(content.Load<Texture2D>("collision_wall"));
 
             Obstacle.Position = enemyOnePosition;
@@ -117,13 +117,6 @@ namespace concept_0_03
                 Obstacle.Position = new Vector2(-30, -50);
 
                 wasFightOpen = true;
-            }
-
-            if (isMusicStopped == true && wasFightOpen == true)
-            {
-                isMusicStopped = false;
-                wasFightOpen = false;
-                bgMusic.Resume();
             }
 
             if (isMusicStopped == true && wasOptionsOpen == true)

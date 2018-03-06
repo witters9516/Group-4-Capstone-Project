@@ -28,10 +28,15 @@ namespace concept_0_03
         private int enemyHealth = 20;
         private string fullEnemyHealthText;
 
+        private Text m_pHealthText;
+        private int playerHealth = 20;
+        private string fullPlayerHealthText;
+
         public bool IsPaused { get; private set; }
 
         private SoundEffect bgSong;
         private SoundEffectInstance bgMusic;
+        private KeyboardState oldState;
 
         public FightScreen(IGameScreenManager gameScreenManager)
         {
@@ -56,15 +61,24 @@ namespace concept_0_03
             bgMusic.IsLooped = true;
             bgMusic.Play();
 
+            var questionBackground = new Sprite(content.Load<Texture2D>("fighttextbox_notail"));
+            questionBackground.Position = new Vector2(10, 10);
+
             #region Enemy Health Rendering
             fullEnemyHealthText = "Enemy Health: " + enemyHealth;
 
-            var x = ((800 / 2) - (m_font.MeasureString(fullEnemyHealthText).X / 2)) + (((800 / 2) - (m_font.MeasureString(fullEnemyHealthText).X / 2))/2);
-            var y = 550;
-            Vector2 m_textPosition = new Vector2(x, y);
-            Color m_color = Color.Black;
+            Vector2 m_eHealthPosition= new Vector2(525, 560);
+            Color m_eHealthColor = Color.Black;
 
-            m_eHealthText = new Text(fullEnemyHealthText, m_font, m_textPosition, m_color);
+            m_eHealthText = new Text(fullEnemyHealthText, m_font, m_eHealthPosition, m_eHealthColor);
+            #endregion
+            #region Player Health Rendering
+            fullPlayerHealthText = "Player Health: " + playerHealth;
+
+            Vector2 m_pHealthPosition = new Vector2(225, 560);
+            Color m_pHealthColor = Color.Black;
+
+            m_pHealthText = new Text(fullEnemyHealthText, m_font, m_pHealthPosition, m_pHealthColor);
             #endregion
 
             #region Answer Button 1
@@ -106,6 +120,8 @@ namespace concept_0_03
 
             m_components = new List<Component>()
             {
+                questionBackground,
+
                 answerButton1,
                 answerButton2,
                 answerButton3,
@@ -123,6 +139,10 @@ namespace concept_0_03
             {
                 enemyHealth -= 5;
             }
+            else
+            {
+                playerHealth -= 5;
+            }
         }
 
         private void AnswerButton2_Click(object sender, EventArgs e)
@@ -132,6 +152,10 @@ namespace concept_0_03
             if (optionTwo == currentWord)
             {
                 enemyHealth -= 5;
+            }
+            else
+            {
+                playerHealth -= 5;
             }
         }
 
@@ -143,6 +167,10 @@ namespace concept_0_03
             {
                 enemyHealth -= 5;
             }
+            else
+            {
+                playerHealth -= 5;
+            }
         }
 
         private void AnswerButton4_Click(object sender, EventArgs e)
@@ -152,6 +180,10 @@ namespace concept_0_03
             if (optionFour == currentWord)
             {
                 enemyHealth -= 5;
+            }
+            else
+            {
+                playerHealth -= 5;
             }
         }
 
@@ -173,11 +205,18 @@ namespace concept_0_03
                 component.Update(gameTime);
 
             m_eHealthText.Message = "Enemy Health: " + enemyHealth;
+            m_pHealthText.Message = "Player Health: " + playerHealth;
 
             if (enemyHealth <= 0)
             {
                 bgMusic.Stop();
                 m_ScreenManager.PopScreen();
+            }
+
+            if (playerHealth <= 0)
+            {
+                bgMusic.Stop();
+                m_ScreenManager.ChangeScreen(new GameOverScreen(m_ScreenManager));
             }
         }
 
@@ -186,6 +225,7 @@ namespace concept_0_03
             spriteBatch.Begin();
 
             m_eHealthText.Draw(spriteBatch);
+            m_pHealthText.Draw(spriteBatch);
 
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
@@ -202,7 +242,33 @@ namespace concept_0_03
                 m_exitGame = true;
             }
 
+            if (keyboard.IsKeyDown(Keys.Back))
+            {
+                m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
+            }
 
+            #region Answer on Button Press
+            /* -- Get these to do something somehow...
+            if (oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W))
+            { 
+                // AnswerButton1_Click;
+            }
+            if (oldState.IsKeyUp(Keys.A) && keyboard.IsKeyDown(Keys.A))
+            {
+                // AnswerButton2_Click;
+            }
+            if (oldState.IsKeyUp(Keys.D) && keyboard.IsKeyDown(Keys.D))
+            { 
+                // AnswerButton3_Click;
+            }
+            if (oldState.IsKeyUp(Keys.S) && keyboard.IsKeyDown(Keys.S))
+            {
+                // AnswerButton4_Click;
+            }
+            */
+            #endregion
+
+            oldState = keyboard;
         }
 
         public void Dispose()

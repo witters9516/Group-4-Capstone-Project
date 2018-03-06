@@ -8,6 +8,7 @@ namespace concept_0_03
     {
         GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        public static Texture2D activePlayerTexture;
 
         private IGameScreenManager m_screenManager;
         
@@ -29,6 +30,7 @@ namespace concept_0_03
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            activePlayerTexture = Content.Load<Texture2D>("Player/player01_Front");
 
             // TODO: use this.Content to load your game content here
             m_screenManager = new GameScreenManager(spriteBatch, Content);

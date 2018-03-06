@@ -5,7 +5,7 @@ namespace concept_0_03
 {
     public class Sprite : Component
     {
-        protected Texture2D _texture;
+        public Texture2D _texture;
 
         public Vector2 Position;
 

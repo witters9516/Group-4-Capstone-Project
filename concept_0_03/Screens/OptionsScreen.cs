@@ -20,6 +20,8 @@ namespace concept_0_03
         private SoundEffect bgSong;
         private SoundEffectInstance bgMusic;
 
+        KeyboardState oldState;
+
         public bool IsPaused { get; private set; }
 
         public OptionsScreen(IGameScreenManager gameScreenManager)
@@ -150,19 +152,20 @@ namespace concept_0_03
         public void HandleInput(GameTime gameTime)
         {
             var keyboard = Keyboard.GetState();
-            var oldState = keyboard;
 
             if (keyboard.IsKeyDown(Keys.Escape))
             {
                 m_exitGame = true;
             }
-
-            /* -- Trying to get Back
+            
+            /*
             if (oldState.IsKeyUp(Keys.Back) && keyboard.IsKeyDown(Keys.Back))
             {
                 m_ScreenManager.PopScreen();
             }
             */
+
+            oldState = keyboard;
         }
 
         public void Dispose()

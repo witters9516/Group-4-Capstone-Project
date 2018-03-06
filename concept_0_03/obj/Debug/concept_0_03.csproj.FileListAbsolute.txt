@@ -462,3 +462,10 @@ C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\D
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Debug\concept_0_03.csproj.CoreCompileInputs.cache
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Debug\concept_0_03.exe
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Debug\concept_0_03.pdb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player01_Front.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player02_Front.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player03_Front.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player01_port.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player02_port.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player03_port.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\fighttextbox_notail.xnb
