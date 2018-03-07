@@ -23,6 +23,9 @@ namespace concept_0_03
         private string optionThree = "blau";
         private string optionFour = "gruen";
         private string currentWord = "rot";
+        private string questionBeginning = "Please translate: ";
+        private string questionWord = "red";
+        private Text m_questionText;
 
         private Text m_eHealthText;
         private int enemyHealth = 20;
@@ -78,7 +81,16 @@ namespace concept_0_03
             Vector2 m_pHealthPosition = new Vector2(225, 560);
             Color m_pHealthColor = Color.Black;
 
-            m_pHealthText = new Text(fullEnemyHealthText, m_font, m_pHealthPosition, m_pHealthColor);
+            m_pHealthText = new Text(fullPlayerHealthText, m_font, m_pHealthPosition, m_pHealthColor);
+            #endregion
+            #region Question Rendering
+            questionBeginning = "Please translate: " + questionWord;
+
+            Vector2 m_questionPosition = new Vector2(1, 20);
+            Color m_questionColor = Color.Black;
+
+            m_questionText = new Text(questionBeginning, m_font, m_questionPosition, m_questionColor);
+            m_questionText.CenterHorizontal(800, 30);
             #endregion
 
             #region Answer Button 1
@@ -206,6 +218,8 @@ namespace concept_0_03
 
             m_eHealthText.Message = "Enemy Health: " + enemyHealth;
             m_pHealthText.Message = "Player Health: " + playerHealth;
+            m_questionText.Message = "Quick, what's \"" + questionWord  + "\" in German! ";
+            m_questionText.CenterHorizontal(800, 30);
 
             if (enemyHealth <= 0)
             {
@@ -229,6 +243,8 @@ namespace concept_0_03
 
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
+
+            m_questionText.Draw(spriteBatch);
 
             spriteBatch.End();
         }
