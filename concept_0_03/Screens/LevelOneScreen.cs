@@ -23,8 +23,8 @@ namespace concept_0_03
         private bool wasOptionsOpen = false;
         private bool wasFightOpen = false;
 
-        private Player _player;
-        private Sprite obstacle;
+        private Player Player;
+        private Sprite Obstacle;
 
         #region Enemy One Variables
         private Vector2 enemyOnePosition = new Vector2(300,400);
@@ -41,8 +41,6 @@ namespace concept_0_03
         private Timer timer = new Timer();
 
         public bool IsPaused { get; private set; }
-        public Player Player { get => _player; set => _player = value; }
-        public Sprite Obstacle { get => obstacle; set => obstacle = value; }
 
         public LevelOneScreen(IGameScreenManager gameScreenManager)
         {

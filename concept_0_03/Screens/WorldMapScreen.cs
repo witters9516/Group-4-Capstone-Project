@@ -24,11 +24,9 @@ namespace concept_0_03
 
         #region Level Boxes and Player Info
 
-        private Player _player;
-        public Player Player { get => _player; set => _player = value; }
+        private Player Player;
 
-        private Sprite _levelOne;
-        public Sprite LevelOne { get => _levelOne; set => _levelOne = value; }
+        private Sprite LevelOne;
 
         private bool intersectsLevelOne = false;
 
