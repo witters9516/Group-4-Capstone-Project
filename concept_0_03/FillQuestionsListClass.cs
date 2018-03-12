@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace concept_0_03
 {
@@ -16,15 +16,19 @@ namespace concept_0_03
         SqlConnection sqlConnection1 = new SqlConnection("Your Connection String");
         SqlDataReader reader;
         SqlCommand cmd = new SqlCommand();
-        cmd.CommandText = "SELECT * FROM Customers";
-        cmd.CommandType = CommandType.Text;
-        cmd.Connection = sqlConnection1;
 
-        sqlConnection1.Open();
+        public FillQuestionsListClass()
+        {
+            cmd.CommandText = "SELECT * FROM Customers";
+            cmd.CommandType = CommandType.Text;
+            cmd.Connection = sqlConnection1;
 
-        reader = cmd.ExecuteReader();
-        // Data is accessible through the DataReader object here.
+            sqlConnection1.Open();
 
-        sqlConnection1.Close();
+            reader = cmd.ExecuteReader();
+            // Data is accessible through the DataReader object here.
+
+            sqlConnection1.Close();
+        }
     }
 }

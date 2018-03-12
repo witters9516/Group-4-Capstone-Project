@@ -25,8 +25,8 @@ namespace concept_0_03
         private string currentWord = "rot";
         private string questionBeginning = "Please translate: ";
         private string questionWord = "red";
-        private Text m_questionText;
 
+        private Text m_questionText;
         private Text m_eHealthText;
         private int enemyHealth = 20;
         private string fullEnemyHealthText;
