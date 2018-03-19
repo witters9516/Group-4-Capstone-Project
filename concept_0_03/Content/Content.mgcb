@@ -1342,3 +1342,10 @@
 /processorParam:TextureFormat=Color
 /build:Hiragana/za.png
 
+#begin Fonts/Japanese.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Fonts/Japanese.spritefont
+

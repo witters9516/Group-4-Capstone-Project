@@ -605,3 +605,4 @@ C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\D
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\QuestionDatabase.mdf
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\QuestionDatabase_log.ldf
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\concept_0_03.exe.config
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Fonts\Hiragana.xnb
