@@ -77,7 +77,7 @@ namespace concept_0_03
             bgMusic.Play();
 
             Player = new Player(Game1.activePlayerTexture);
-            Obstacle = new Sprite(content.Load<Texture2D>("collision_wall"));
+            Obstacle = new Sprite(content.Load<Texture2D>("Enemies/wraith"));
 
             Obstacle.Position = enemyOnePosition;
             
