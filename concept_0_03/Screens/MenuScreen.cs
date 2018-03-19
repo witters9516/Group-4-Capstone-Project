@@ -46,7 +46,7 @@ namespace concept_0_03
             bgMusic = bgSong.CreateInstance();
 
             bgMusic.IsLooped = true;
-            //bgMusic.Play();
+            bgMusic.Play();
 
             #region Title Stuff
             string titleText = "Japakeys";
@@ -122,7 +122,7 @@ namespace concept_0_03
         #region Button Methods
         private void NewGameButton_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
             bgMusic.Stop();
             m_ScreenManager.ChangeScreen(new CharacterSelectionScreen(m_ScreenManager));
         }

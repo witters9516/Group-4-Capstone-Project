@@ -18,15 +18,15 @@ namespace concept_0_03
         private List<Component> m_components;
         private SoundEffect click;
 
-        private string optionOne = "き";
+        private string optionOne = "rgdsfg";
         private string optionTwo = "rot";
         private string optionThree = "blau";
         private string optionFour = "gruen";
         private string currentWord = "rot";
         private string questionBeginning = "Please translate: ";
         private string questionWord = "red";
-
         private Text m_questionText;
+
         private Text m_eHealthText;
         private int enemyHealth = 20;
         private string fullEnemyHealthText;
@@ -57,16 +57,28 @@ namespace concept_0_03
         public void Init(ContentManager content)
         {
             SpriteFont m_font = content.Load<SpriteFont>("Fonts/Font");
-            SpriteFont m_hiragana = content.Load<SpriteFont>("Fonts/Hiragana");
+            SpriteFont j_font = content.Load<SpriteFont>("Fonts/Japanese");
             click = content.Load<SoundEffect>("SFX/Select_Click");
             bgSong = content.Load<SoundEffect>("Music/Reformat");
             bgMusic = bgSong.CreateInstance();
 
             bgMusic.IsLooped = true;
-            //bgMusic.Play();
+            bgMusic.Play();
 
-            var questionBackground = new Sprite(content.Load<Texture2D>("fighttextbox_notail"));
-            questionBackground.Position = new Vector2(10, 10);
+            #region BG
+            var questionBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountains"));
+            questionBackground.Position = new Vector2(-300, -200);
+            #endregion
+
+            #region Player Render
+            var player = new Sprite(Game1.activePlayerTexture);
+            player.Position = new Vector2(150, 420);
+            #endregion
+
+            #region Enemy Render
+            var enemy = new Sprite(content.Load<Texture2D>("Enemies/wraith"));
+            enemy.Position = new Vector2(550, 420);
+            #endregion
 
             #region Enemy Health Rendering
             fullEnemyHealthText = "Enemy Health: " + enemyHealth;
@@ -84,6 +96,7 @@ namespace concept_0_03
 
             m_pHealthText = new Text(fullPlayerHealthText, m_font, m_pHealthPosition, m_pHealthColor);
             #endregion
+
             #region Question Rendering
             questionBeginning = "Please translate: " + questionWord;
 
@@ -95,7 +108,7 @@ namespace concept_0_03
             #endregion
 
             #region Answer Button 1
-            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
                 Position = new Vector2(305, 200),
                 Text = optionOne,
@@ -104,7 +117,7 @@ namespace concept_0_03
             answerButton1.Click += AnswerButton1_Click;
             #endregion
             #region Answer Button 2
-            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Blue/blue_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Blue/blue_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
                 Position = new Vector2(205, 250),
                 Text = optionTwo,
@@ -113,7 +126,7 @@ namespace concept_0_03
             answerButton2.Click += AnswerButton2_Click;
             #endregion
             #region Answer Button 3
-            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Blue/Blue_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Blue/Blue_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
                 Position = new Vector2(405, 250),
                 Text = optionThree,
@@ -122,7 +135,7 @@ namespace concept_0_03
             answerButton3.Click += AnswerButton3_Click;
             #endregion
             #region Answer Button 4
-            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Font"))
             {
                 Position = new Vector2(305, 300),
                 Text = optionFour,
@@ -134,6 +147,8 @@ namespace concept_0_03
             m_components = new List<Component>()
             {
                 questionBackground,
+                player,
+                enemy,
 
                 answerButton1,
                 answerButton2,
@@ -146,7 +161,7 @@ namespace concept_0_03
 
         private void AnswerButton1_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             if (optionOne == currentWord)
             {
@@ -160,7 +175,7 @@ namespace concept_0_03
 
         private void AnswerButton2_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             if (optionTwo == currentWord)
             {
@@ -174,7 +189,7 @@ namespace concept_0_03
 
         private void AnswerButton3_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             if (optionThree == currentWord)
             {
@@ -188,7 +203,7 @@ namespace concept_0_03
 
         private void AnswerButton4_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             if (optionFour == currentWord)
             {
@@ -239,11 +254,11 @@ namespace concept_0_03
         {
             spriteBatch.Begin();
 
-            m_eHealthText.Draw(spriteBatch);
-            m_pHealthText.Draw(spriteBatch);
-
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
+
+            m_eHealthText.Draw(spriteBatch);
+            m_pHealthText.Draw(spriteBatch);
 
             m_questionText.Draw(spriteBatch);
 
