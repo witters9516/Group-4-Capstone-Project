@@ -54,7 +54,7 @@ namespace concept_0_03
             bgMusic = bgSong.CreateInstance();
 
             bgMusic.IsLooped = true;
-            bgMusic.Play();
+            //bgMusic.Play();
 
             Player = new Player(Game1.activePlayerTexture);
             LevelOne = new Sprite(content.Load<Texture2D>("block"));
