@@ -18,21 +18,37 @@ namespace concept_0_03
         private List<Component> m_components;
         private SoundEffect click;
 
-        private string optionOne = "き";
-        private string optionTwo = "rot";
-        private string optionThree = "blau";
-        private string optionFour = "gruen";
-        private string currentWord = "rot";
+        private string optionOne = "か";
+        private string optionTwo = "き";
+        private string optionThree = "こ";
+        private string optionFour = "く";
+        private string currentWord = "か";
         private string questionBeginning = "Please translate: ";
-        private string questionWord = "red";
+        private string questionWord = "ka";
 
         private Text m_questionText;
         private Text m_eHealthText;
-        private int enemyHealth = 20;
+        private int enemyHealth = 5;
         private string fullEnemyHealthText;
 
+        #region Health Bar Variables
+
+        private Sprite e_healthBarBack;
+        private Sprite e_healthBarMain;
+        private Sprite p_healthBarBack;
+        private Sprite p_healthBarMain;
+
+        private Texture2D fiveHearts;
+        private Texture2D fourHearts;
+        private Texture2D threeHearts;
+        private Texture2D twoHearts;
+        private Texture2D oneHeart;
+        private Texture2D zeroHearts;
+
+        #endregion
+
         private Text m_pHealthText;
-        private int playerHealth = 20;
+        private int playerHealth = 5;
         private string fullPlayerHealthText;
 
         public bool IsPaused { get; private set; }
@@ -57,33 +73,62 @@ namespace concept_0_03
         public void Init(ContentManager content)
         {
             SpriteFont m_font = content.Load<SpriteFont>("Fonts/Font");
-            SpriteFont m_hiragana = content.Load<SpriteFont>("Fonts/Hiragana");
+            SpriteFont m_Japanese = content.Load<SpriteFont>("Fonts/Japanese");
             click = content.Load<SoundEffect>("SFX/Select_Click");
             bgSong = content.Load<SoundEffect>("Music/Reformat");
             bgMusic = bgSong.CreateInstance();
 
-            bgMusic.IsLooped = true;
-            //bgMusic.Play();
+            #region Health Bar Textures
 
-            var questionBackground = new Sprite(content.Load<Texture2D>("fighttextbox_notail"));
-            questionBackground.Position = new Vector2(10, 10);
+            fiveHearts = content.Load<Texture2D>("Health/5");
+            fourHearts = content.Load<Texture2D>("Health/4");
+            threeHearts = content.Load<Texture2D>("Health/3");
+            twoHearts = content.Load<Texture2D>("Health/2");
+            oneHeart = content.Load<Texture2D>("Health/1");
+            zeroHearts = content.Load<Texture2D>("Health/0");
+
+            #endregion
+
+            bgMusic.IsLooped = true;
+            bgMusic.Volume = 0.5f;
+            bgMusic.Play();
+
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgCloudsSmaller"));
+            screenBackground.Position = new Vector2(-100, -2);
+
+            var questionBackground = new Sprite(content.Load<Texture2D>("textbox600x180"));
+            questionBackground.Position = new Vector2(100, 2);
 
             #region Enemy Health Rendering
             fullEnemyHealthText = "Enemy Health: " + enemyHealth;
 
-            Vector2 m_eHealthPosition= new Vector2(525, 560);
+            Vector2 m_eHealthPosition = new Vector2(575, 560);
             Color m_eHealthColor = Color.Black;
 
             m_eHealthText = new Text(fullEnemyHealthText, m_font, m_eHealthPosition, m_eHealthColor);
             #endregion
+            #region Enemy Health Bar
+
+            e_healthBarMain = new Sprite(fiveHearts);
+            e_healthBarMain.Position = m_eHealthPosition;
+
+            #endregion
+
             #region Player Health Rendering
             fullPlayerHealthText = "Player Health: " + playerHealth;
 
-            Vector2 m_pHealthPosition = new Vector2(225, 560);
+            Vector2 m_pHealthPosition = new Vector2(25, 560);
             Color m_pHealthColor = Color.Black;
 
             m_pHealthText = new Text(fullPlayerHealthText, m_font, m_pHealthPosition, m_pHealthColor);
             #endregion
+            #region Player Health Bar
+
+            p_healthBarMain = new Sprite(fiveHearts);
+            p_healthBarMain.Position = m_pHealthPosition;
+
+            #endregion
+
             #region Question Rendering
             questionBeginning = "Please translate: " + questionWord;
 
@@ -95,7 +140,7 @@ namespace concept_0_03
             #endregion
 
             #region Answer Button 1
-            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), m_Japanese)
             {
                 Position = new Vector2(305, 200),
                 Text = optionOne,
@@ -104,7 +149,7 @@ namespace concept_0_03
             answerButton1.Click += AnswerButton1_Click;
             #endregion
             #region Answer Button 2
-            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Blue/blue_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton2 = new Button(content.Load<Texture2D>("Menu/Blue/blue_button03"), m_Japanese)
             {
                 Position = new Vector2(205, 250),
                 Text = optionTwo,
@@ -113,7 +158,7 @@ namespace concept_0_03
             answerButton2.Click += AnswerButton2_Click;
             #endregion
             #region Answer Button 3
-            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Blue/Blue_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton3 = new Button(content.Load<Texture2D>("Menu/Blue/Blue_button03"), m_Japanese)
             {
                 Position = new Vector2(405, 250),
                 Text = optionThree,
@@ -122,7 +167,7 @@ namespace concept_0_03
             answerButton3.Click += AnswerButton3_Click;
             #endregion
             #region Answer Button 4
-            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), content.Load<SpriteFont>("Fonts/Hiragana"))
+            var answerButton4 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), m_Japanese)
             {
                 Position = new Vector2(305, 300),
                 Text = optionFour,
@@ -133,6 +178,7 @@ namespace concept_0_03
 
             m_components = new List<Component>()
             {
+                screenBackground,
                 questionBackground,
 
                 answerButton1,
@@ -150,11 +196,11 @@ namespace concept_0_03
 
             if (optionOne == currentWord)
             {
-                enemyHealth -= 5;
+                enemyHealth -= 1;
             }
             else
             {
-                playerHealth -= 5;
+                playerHealth -= 1;
             }
         }
 
@@ -164,11 +210,11 @@ namespace concept_0_03
 
             if (optionTwo == currentWord)
             {
-                enemyHealth -= 5;
+                enemyHealth -= 1;
             }
             else
             {
-                playerHealth -= 5;
+                playerHealth -= 1;
             }
         }
 
@@ -178,11 +224,11 @@ namespace concept_0_03
 
             if (optionThree == currentWord)
             {
-                enemyHealth -= 5;
+                enemyHealth -= 1;
             }
             else
             {
-                playerHealth -= 5;
+                playerHealth -= 1;
             }
         }
 
@@ -192,11 +238,11 @@ namespace concept_0_03
 
             if (optionFour == currentWord)
             {
-                enemyHealth -= 5;
+                enemyHealth -= 1;
             }
             else
             {
-                playerHealth -= 5;
+                playerHealth -= 1;
             }
         }
 
@@ -219,19 +265,51 @@ namespace concept_0_03
 
             m_eHealthText.Message = "Enemy Health: " + enemyHealth;
             m_pHealthText.Message = "Player Health: " + playerHealth;
-            m_questionText.Message = "Quick, what's \"" + questionWord  + "\" in German! ";
+            m_questionText.Message = "Quick, which character is \"" + questionWord  + "\"! ";
             m_questionText.CenterHorizontal(800, 30);
 
-            if (enemyHealth <= 0)
+            switch (enemyHealth)
             {
-                bgMusic.Stop();
-                m_ScreenManager.PopScreen();
+                case 5:
+                    break;
+                case 4:
+                    e_healthBarMain._texture = fourHearts;
+                    break;
+                case 3:
+                    e_healthBarMain._texture = threeHearts;
+                    break;
+                case 2:
+                    e_healthBarMain._texture = twoHearts;
+                    break;
+                case 1:
+                    e_healthBarMain._texture = oneHeart;
+                    break;
+                case 0:
+                    bgMusic.Stop();
+                    m_ScreenManager.PopScreen();
+                    break;
             }
 
-            if (playerHealth <= 0)
+            switch (playerHealth)
             {
-                bgMusic.Stop();
-                m_ScreenManager.ChangeScreen(new GameOverScreen(m_ScreenManager));
+                case 5:
+                    break;
+                case 4:
+                    p_healthBarMain._texture = fourHearts;
+                    break;
+                case 3:
+                    p_healthBarMain._texture = threeHearts;
+                    break;
+                case 2:
+                    p_healthBarMain._texture = twoHearts;
+                    break;
+                case 1:
+                    p_healthBarMain._texture = oneHeart;
+                    break;
+                case 0:
+                    bgMusic.Stop();
+                    m_ScreenManager.ChangeScreen(new GameOverScreen(m_ScreenManager));
+                    break;
             }
         }
 
@@ -239,11 +317,16 @@ namespace concept_0_03
         {
             spriteBatch.Begin();
 
+            /*
             m_eHealthText.Draw(spriteBatch);
             m_pHealthText.Draw(spriteBatch);
+            */
 
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
+
+            e_healthBarMain.Draw(gameTime, spriteBatch);
+            p_healthBarMain.Draw(gameTime, spriteBatch);
 
             m_questionText.Draw(spriteBatch);
 

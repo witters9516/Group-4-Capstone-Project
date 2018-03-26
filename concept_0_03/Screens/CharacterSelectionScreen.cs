@@ -69,7 +69,10 @@ namespace concept_0_03
             checkedBox = content.Load<Texture2D>("Menu/Red/red_boxTick");
 
             bgMusic.IsLooped = true;
-            //bgMusic.Play();
+            bgMusic.Play();
+
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"));
+            screenBackground.Position = new Vector2(-100, -2);
 
             #region Character Portraits
 
@@ -141,6 +144,8 @@ namespace concept_0_03
 
             m_components = new List<Component>()
             {
+                screenBackground,
+
                 #region Portraits
 
                 player01_port,
@@ -171,15 +176,15 @@ namespace concept_0_03
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            //bgMusic.Stop();
-            //click.Play();
+            bgMusic.Stop();
+            click.Play();
 
             m_ScreenManager.ChangeScreen(new WorldMapScreen(m_ScreenManager));
         }
 
         private void Character01Button_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             Game1.activePlayerTexture = player01;
             whichCharacter = "Player01";
@@ -187,7 +192,7 @@ namespace concept_0_03
 
         private void Character02Button_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             Game1.activePlayerTexture = player02;
             whichCharacter = "Player02";
@@ -195,7 +200,7 @@ namespace concept_0_03
 
         private void Character03Button_Click(object sender, EventArgs e)
         {
-            //click.Play();
+            click.Play();
 
             Game1.activePlayerTexture = player03;
             whichCharacter = "Player03";

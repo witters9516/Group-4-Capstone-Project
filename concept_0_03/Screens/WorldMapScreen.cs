@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Timers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -19,14 +20,21 @@ namespace concept_0_03
         private SoundEffect bgSong;
         private SoundEffectInstance bgMusic;
         private bool isMusicStopped = false;
+        private int currentLevel = 0;
 
         public bool IsPaused { get; private set; }
+
+        private Timer moveToNextLevel = new Timer();
+        bool justMovedToNextLevel = false;
 
         #region Level Boxes and Player Info
 
         private Player Player;
 
         private Sprite LevelOne;
+        private Sprite LevelTwo;
+        private Sprite LevelThree;
+        private Sprite LevelFour;
 
         private bool intersectsLevelOne = false;
 
@@ -35,6 +43,12 @@ namespace concept_0_03
         public WorldMapScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
+
+            #region Timer Stuff
+            
+            moveToNextLevel.Interval = 500;
+
+            #endregion
         }
 
         public void ChangeBetweenScreens()
@@ -54,18 +68,36 @@ namespace concept_0_03
             bgMusic = bgSong.CreateInstance();
 
             bgMusic.IsLooped = true;
-            //bgMusic.Play();
+            bgMusic.Volume = 0.5f;
+            bgMusic.Play();
+
+            Sprite background = new Sprite(content.Load<Texture2D>("map wip"));
 
             Player = new Player(Game1.activePlayerTexture);
+            Player.playerCanMove = false;
+
+            #region Level Entrance Rendering
+
             LevelOne = new Sprite(content.Load<Texture2D>("block"));
 
-            LevelOne.Position = new Vector2(100,100);
-            LevelOne.Colour = new Color(143, 100, 100, 30);
+            LevelOne.Position = new Vector2(73,70);
+            LevelOne.Colour = new Color(143, 100, 100, 10);
+
+            LevelTwo = new Sprite(content.Load<Texture2D>("block"));
+
+            LevelTwo.Position = new Vector2(182, 175);
+            LevelTwo.Colour = new Color(150, 100, 230, 10);
+
+            #endregion
+
+            Player.Position = new Vector2(-5, 240);
 
             m_components = new List<Component>()
             {
-                Player,
+                background,
                 LevelOne,
+                LevelTwo,
+                Player,
             };
         }
 
@@ -92,6 +124,13 @@ namespace concept_0_03
             {
                 intersectsLevelOne = false;
             }
+
+            moveToNextLevel.Elapsed += MoveToNextLevel_Elapsed;
+        }
+
+        private void MoveToNextLevel_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            justMovedToNextLevel = false;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -132,6 +171,59 @@ namespace concept_0_03
                 }
 
                 // does it intersect with Level Two, etc, etc
+            }
+
+            if (keyboard.IsKeyDown(Keys.Left) && justMovedToNextLevel == false)
+            {
+                switch (currentLevel)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        Player.Position = new Vector2(-5, 240);
+                        currentLevel = 0;
+
+                        justMovedToNextLevel = true;
+                        moveToNextLevel.Start();
+                        break;
+                    case 2:
+                        Player.Position = LevelOne.Position;
+                        currentLevel = 1;
+
+                        justMovedToNextLevel = true;
+                        moveToNextLevel.Start();
+                        break;
+                    case 3:
+                        Player.Position = LevelTwo.Position;
+                        currentLevel = 2;
+
+                        justMovedToNextLevel = true;
+                        moveToNextLevel.Start();
+                        break;
+
+                }
+            }
+
+            if (keyboard.IsKeyDown(Keys.Right) && justMovedToNextLevel == false)
+            {
+                switch (currentLevel)
+                {
+                    case 0:
+                        Player.Position = LevelOne.Position;
+                        currentLevel = 1;
+
+                        justMovedToNextLevel = true;
+                        moveToNextLevel.Start();
+                        break;
+                    case 1:
+                        Player.Position = LevelTwo.Position;
+                        currentLevel = 2;
+
+                        justMovedToNextLevel = true;
+                        moveToNextLevel.Start();
+                        break;
+
+                }
             }
         }
 

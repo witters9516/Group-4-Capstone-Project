@@ -4,7 +4,6 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Japanese.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Font.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/SmallFont.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/TitleFont.spritefont</File>
@@ -120,5 +119,23 @@
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/wa.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/ya.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/za.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Japanese.spritefont</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/map wip.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/0.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/1.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/2.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/3.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/4.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/5.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textbox300x150.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textbox600x300.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textbox600x225.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textbox600x180.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgClouds.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgMountains.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgTrees.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgWaterfall.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgMountainsSmaller.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgCloudsSmaller.png</File>
   </SourceFiles>
 </SourceFileCollection>
