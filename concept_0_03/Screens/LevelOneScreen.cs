@@ -61,7 +61,7 @@ namespace concept_0_03
             timer.Start();
 
             fightStartTimer.AutoReset = false;
-            fightStartTimer.Interval = 1500;
+            fightStartTimer.Interval = 800;
             fightStartTimer.Start();
 
             #endregion
@@ -86,13 +86,12 @@ namespace concept_0_03
             bgMusic.Play();
 
             Player = new Player(Game1.activePlayerTexture);
-            Obstacle = new Sprite(content.Load<Texture2D>("collision_wall"));
+            Obstacle = new Sprite(content.Load<Texture2D>("Enemies/wraith"));
 
             Obstacle.Position = enemyOnePosition;
             
             m_components = new List<Component>()
             {
-                // new Sprite(Content.Load<Texture2D>("stars")),
                 Player,
                 Obstacle,
             };

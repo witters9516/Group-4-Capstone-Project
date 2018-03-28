@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Timers;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
@@ -57,9 +58,15 @@ namespace concept_0_03
         private SoundEffectInstance bgMusic;
         private KeyboardState oldState;
 
+        private Timer canAnswerTimer = new Timer();
+        private bool canAnswer = false;
+
         public FightScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
+
+            canAnswerTimer.Interval = 400;
+            canAnswerTimer.Start();
         }
 
         public void ChangeBetweenScreens()
@@ -96,7 +103,7 @@ namespace concept_0_03
             var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgCloudsSmaller"));
             screenBackground.Position = new Vector2(-100, -2);
 
-            var questionBackground = new Sprite(content.Load<Texture2D>("textbox600x180"));
+            var questionBackground = new Sprite(content.Load<Texture2D>("textboxes/textbox600x180"));
             questionBackground.Position = new Vector2(100, 2);
 
             #region Enemy Health Rendering
@@ -189,6 +196,62 @@ namespace concept_0_03
         }
 
         #region Click Methods
+
+        private void Answer01_Pressed()
+        {
+            //click.Play();
+
+            if (optionOne == currentWord)
+            {
+                enemyHealth -= 1;
+            }
+            else
+            {
+                playerHealth -= 1;
+            }
+        }
+
+        private void Answer02_Pressed()
+        {
+            //click.Play();
+
+            if (optionTwo == currentWord)
+            {
+                enemyHealth -= 1;
+            }
+            else
+            {
+                playerHealth -= 1;
+            }
+        }
+
+        private void Answer03_Pressed()
+        {
+            //click.Play();
+
+            if (optionThree == currentWord)
+            {
+                enemyHealth -= 1;
+            }
+            else
+            {
+                playerHealth -= 1;
+            }
+        }
+
+        private void Answer04_Pressed()
+        {
+            //click.Play();
+
+            if (optionFour == currentWord)
+            {
+                enemyHealth -= 1;
+            }
+            else
+            {
+                playerHealth -= 1;
+            }
+        }
 
         private void AnswerButton1_Click(object sender, EventArgs e)
         {
@@ -311,6 +374,16 @@ namespace concept_0_03
                     m_ScreenManager.ChangeScreen(new GameOverScreen(m_ScreenManager));
                     break;
             }
+
+            if (canAnswer == false)
+            {
+                canAnswerTimer.Elapsed += CanAnswerTimer_Elapsed;
+            }
+        }
+
+        private void CanAnswerTimer_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            canAnswer = true;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -348,24 +421,35 @@ namespace concept_0_03
             }
 
             #region Answer on Button Press
-            /* -- Get these to do something somehow...
-            if (oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W))
-            { 
-                // AnswerButton1_Click;
-            }
-            if (oldState.IsKeyUp(Keys.A) && keyboard.IsKeyDown(Keys.A))
+            if (canAnswer)
             {
-                // AnswerButton2_Click;
+                if (oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W))
+                {
+                    Answer01_Pressed();
+                    canAnswer = false;
+                    canAnswerTimer.Start();
+                }
+                if (oldState.IsKeyUp(Keys.A) && keyboard.IsKeyDown(Keys.A))
+                {
+                    Answer02_Pressed();
+                    canAnswer = false;
+                    canAnswerTimer.Start();
+                }
+                if (oldState.IsKeyUp(Keys.D) && keyboard.IsKeyDown(Keys.D))
+                {
+                    Answer03_Pressed();
+                    canAnswer = false;
+                    canAnswerTimer.Start();
+                }
+                if (oldState.IsKeyUp(Keys.S) && keyboard.IsKeyDown(Keys.S))
+                {
+                    Answer04_Pressed();
+                    canAnswer = false;
+                    canAnswerTimer.Start();
+                }
             }
-            if (oldState.IsKeyUp(Keys.D) && keyboard.IsKeyDown(Keys.D))
-            { 
-                // AnswerButton3_Click;
-            }
-            if (oldState.IsKeyUp(Keys.S) && keyboard.IsKeyDown(Keys.S))
-            {
-                // AnswerButton4_Click;
-            }
-            */
+            
+            
             #endregion
 
             oldState = keyboard;

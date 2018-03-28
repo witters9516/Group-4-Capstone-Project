@@ -29,6 +29,11 @@ namespace concept_0_03
                 else if (Keyboard.GetState().IsKeyDown(Keys.S))
                     velocity.Y = speed;
 
+                if (Keyboard.GetState().IsKeyDown(Keys.Up))
+                    velocity.Y = -speed;
+                else if (Keyboard.GetState().IsKeyDown(Keys.Down))
+                    velocity.Y = speed;
+
                 #endregion
 
                 #region Left & Right Movement -- CURRENTLY ON
@@ -38,6 +43,15 @@ namespace concept_0_03
                     velocity.X = -speed;
                 }
                 else if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    velocity.X = speed;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.Left))
+                {
+                    velocity.X = -speed;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.Right))
                 {
                     velocity.X = speed;
                 }
