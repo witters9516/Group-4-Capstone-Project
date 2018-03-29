@@ -20,8 +20,6 @@ namespace concept_0_03
         private SoundEffect click;
 
         private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
-        private bool isMusicStopped = false;
 
         #region Player UI variables
 
@@ -63,13 +61,33 @@ namespace concept_0_03
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
             bgSong = content.Load<SoundEffect>("Music/Off to Osaka");
-            bgMusic = bgSong.CreateInstance();
+
+            #region Music
+
+            switch (Game1.m_audioState)
+            {
+                case Game1.AudioState.OFF:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PAUSED:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PLAYING:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    Game1.currentInstance.Play();
+                    break;
+            }
+
+            #endregion
 
             uncheckedBox = content.Load<Texture2D>("Menu/Grey/grey_circle");
             checkedBox = content.Load<Texture2D>("Menu/Red/red_boxTick");
-
-            bgMusic.IsLooped = true;
-            bgMusic.Play();
 
             var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"));
             screenBackground.Position = new Vector2(-100, -2);
@@ -179,10 +197,12 @@ namespace concept_0_03
             };
         }
 
+        #region Button Method Region
+
         private void StartButton_Click(object sender, EventArgs e)
         {
-            bgMusic.Stop();
-            click.Play();
+            if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                Game1.currentInstance.Stop();
 
             m_ScreenManager.ChangeScreen(new WorldMapScreen(m_ScreenManager));
         }
@@ -210,6 +230,8 @@ namespace concept_0_03
             Game1.activePlayerTexture = player03;
             whichCharacter = "Player03";
         }
+
+        #endregion
 
         public void Pause()
         {
@@ -267,9 +289,6 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Back))
             {
-                bgMusic.Pause();
-                isMusicStopped = true;
-
                 m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
             }
         }

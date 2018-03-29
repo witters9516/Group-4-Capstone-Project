@@ -103,18 +103,7 @@ namespace concept_0_03
         {
             click.Play();
 
-            // Music Toggle
-            if (isMusicOn)
-            {
-                Console.WriteLine("Music Off");
-                isMusicOn = false;
-            }
-            else if (!isMusicOn)
-            {
-                Console.WriteLine("Music On");
-                isMusicOn = true;
-            }
-            Console.WriteLine("Music Toggle");
+            Game1.ToggleAudio();
         }
 
         private void SaveButton_Click(object sender, EventArgs e)

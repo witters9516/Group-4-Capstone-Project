@@ -56,10 +56,12 @@ namespace concept_0_03
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
             bgSong = content.Load<SoundEffect>("Music/Bit Quest");
-            bgMusic = bgSong.CreateInstance();
 
-            bgMusic.IsLooped = true;
-            bgMusic.Play();
+            Game1.currentInstance = bgSong.CreateInstance();
+            Game1.currentInstance.IsLooped = true;
+
+            Game1.m_audioState = Game1.AudioState.PLAYING;
+            Game1.currentInstance.Play();
 
             var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"));
             screenBackground.Position = new Vector2(-100, -2);
@@ -141,7 +143,10 @@ namespace concept_0_03
         private void NewGameButton_Click(object sender, EventArgs e)
         {
             click.Play();
-            bgMusic.Stop();
+
+            if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                Game1.currentInstance.Stop();
+
             m_ScreenManager.ChangeScreen(new CharacterSelectionScreen(m_ScreenManager));
         }
 
@@ -154,9 +159,6 @@ namespace concept_0_03
 
         private void OptionsGameButton_Click(object sender, EventArgs e)
         {
-            bgMusic.Stop();
-            isMusicStopped = true;
-
             m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
         }
 

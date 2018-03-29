@@ -75,11 +75,30 @@ namespace concept_0_03
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
             bgSong = content.Load<SoundEffect>("Music/Carpe Diem");
-            bgMusic = bgSong.CreateInstance();
 
-            bgMusic.IsLooped = true;
-            bgMusic.Volume = 0.5f;
-            bgMusic.Play();
+            #region Music
+
+            switch (Game1.m_audioState)
+            {
+                case Game1.AudioState.OFF:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PAUSED:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PLAYING:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    Game1.currentInstance.Play();
+                    break;
+            }
+
+            #endregion
 
             Sprite background = new Sprite(content.Load<Texture2D>("WorldMap/map"));
             Texture2D levelEntrance = content.Load<Texture2D>("WorldMap/levelEntrance");
@@ -217,9 +236,6 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Back))
             {
-                bgMusic.Pause();
-                isMusicStopped = true;
-
                 m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
             }
 
@@ -232,8 +248,8 @@ namespace concept_0_03
                     case 0:
                         break;
                     case 1:
-                        bgMusic.Pause();
-                        isMusicStopped = true;
+                        if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                            Game1.currentInstance.Stop();
 
                         m_ScreenManager.PushScreen(new LevelOneScreen(m_ScreenManager));
                         break;

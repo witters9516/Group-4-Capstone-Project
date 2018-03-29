@@ -83,7 +83,30 @@ namespace concept_0_03
             SpriteFont m_Japanese = content.Load<SpriteFont>("Fonts/Japanese");
             click = content.Load<SoundEffect>("SFX/Select_Click");
             bgSong = content.Load<SoundEffect>("Music/Reformat");
-            bgMusic = bgSong.CreateInstance();
+
+            #region Music
+
+            switch (Game1.m_audioState)
+            {
+                case Game1.AudioState.OFF:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PAUSED:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PLAYING:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    Game1.currentInstance.Play();
+                    break;
+            }
+
+            #endregion
 
             #region Health Bar Textures
 
@@ -95,10 +118,6 @@ namespace concept_0_03
             zeroHearts = content.Load<Texture2D>("Health/0");
 
             #endregion
-
-            bgMusic.IsLooped = true;
-            bgMusic.Volume = 0.5f;
-            bgMusic.Play();
 
             var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgCloudsSmaller"));
             screenBackground.Position = new Vector2(-100, -2);
@@ -348,7 +367,9 @@ namespace concept_0_03
                     e_healthBarMain._texture = oneHeart;
                     break;
                 case 0:
-                    bgMusic.Stop();
+                    if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                        Game1.currentInstance.Stop();
+
                     m_ScreenManager.PopScreen();
                     break;
             }
@@ -370,7 +391,9 @@ namespace concept_0_03
                     p_healthBarMain._texture = oneHeart;
                     break;
                 case 0:
-                    bgMusic.Stop();
+                    if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                        Game1.currentInstance.Stop();
+
                     m_ScreenManager.ChangeScreen(new GameOverScreen(m_ScreenManager));
                     break;
             }
