@@ -33,6 +33,7 @@ namespace concept_0_03
         #region Level Entrance and Player Variables
 
         private Player Player;
+        private Sprite Companion;
 
         #region Level Entrance Variables
         private LevelEntrance LevelOne;
@@ -103,8 +104,11 @@ namespace concept_0_03
             Sprite background = new Sprite(content.Load<Texture2D>("WorldMap/map"));
             Texture2D levelEntrance = content.Load<Texture2D>("WorldMap/levelEntrance");
 
-            Player = new Player(Game1.activePlayerTexture);
-            Player.playerCanMove = false;
+            Player = new Player(Game1.activePlayerTexture)
+            {
+                playerCanMove = false,
+                Position = new Vector2(-5, 240)
+            };
 
             #region Level Entrance Rendering
 
@@ -166,7 +170,10 @@ namespace concept_0_03
 
             #endregion
 
-            Player.Position = new Vector2(-5, 240);
+            Companion = new Sprite(content.Load<Texture2D>("NPCs/carl"))
+            {
+                Position = new Vector2(LevelOne.Position.X + 50, LevelOne.Position.Y + 2)
+            };
 
             m_components = new List<Component>()
             {
@@ -189,6 +196,7 @@ namespace concept_0_03
                 #endregion
 
                 Player,
+                Companion,
             };
         }
 
@@ -300,62 +308,62 @@ namespace concept_0_03
                         break;
                     case 1:
                         Player.Position = new Vector2(-5, 240);
-                        movePlayer(0);
+                        MovePlayer(0);
 
                         break;
                     case 2:
                         Player.Position = LevelOne.Position;
-                        movePlayer(1);
+                        MovePlayer(1);
 
                         break;
                     case 3:
                         Player.Position = LevelTwo.Position;
-                        movePlayer(2);
+                        MovePlayer(2);
 
                         break;
                     case 4:
                         Player.Position = LevelThree.Position;
-                        movePlayer(3);
+                        MovePlayer(3);
 
                         break;
                     case 5:
                         Player.Position = LevelFour.Position;
-                        movePlayer(4);
+                        MovePlayer(4);
 
                         break;
                     case 6:
                         Player.Position = LevelFive.Position;
-                        movePlayer(5);
+                        MovePlayer(5);
 
                         break;
                     case 7:
                         Player.Position = LevelSix.Position;
-                        movePlayer(6);
+                        MovePlayer(6);
 
                         break;
                     case 8:
                         Player.Position = LevelSeven.Position;
-                        movePlayer(7);
+                        MovePlayer(7);
 
                         break;
                     case 9:
                         Player.Position = LevelEight.Position;
-                        movePlayer(8);
+                        MovePlayer(8);
 
                         break;
                     case 10:
                         Player.Position = LevelNine.Position;
-                        movePlayer(9);
+                        MovePlayer(9);
 
                         break;
                     case 11:
                         Player.Position = LevelTen.Position;
-                        movePlayer(10);
+                        MovePlayer(10);
 
                         break;
                     case 12:
                         Player.Position = LevelEleven.Position;
-                        movePlayer(11);
+                        MovePlayer(11);
 
                         break;
 
@@ -371,57 +379,57 @@ namespace concept_0_03
                 {
                     case 0:
                         Player.Position = LevelOne.Position;
-                        movePlayer(1);
+                        MovePlayer(1);
 
                         break;
                     case 1:
                         Player.Position = LevelTwo.Position;
-                        movePlayer(2);
+                        MovePlayer(2);
 
                         break;
                     case 2:
                         Player.Position = LevelThree.Position;
-                        movePlayer(3);
+                        MovePlayer(3);
 
                         break;
                     case 3:
                         Player.Position = LevelFour.Position;
-                        movePlayer(4);
+                        MovePlayer(4);
 
                         break;
                     case 4:
                         Player.Position = LevelFive.Position;
-                        movePlayer(5);
+                        MovePlayer(5);
 
                         break;
                     case 5:
                         Player.Position = LevelSix.Position;
-                        movePlayer(6);
+                        MovePlayer(6);
 
                         break;
                     case 6:
                         Player.Position = LevelSeven.Position;
-                        movePlayer(7);
+                        MovePlayer(7);
 
                         break;
                     case 7:
                         Player.Position = LevelEight.Position;
-                        movePlayer(8);
+                        MovePlayer(8);
 
                         break;
                     case 8:
                         Player.Position = LevelNine.Position;
-                        movePlayer(9);
+                        MovePlayer(9);
 
                         break;
                     case 9:
                         Player.Position = LevelTen.Position;
-                        movePlayer(10);
+                        MovePlayer(10);
 
                         break;
                     case 10:
                         Player.Position = LevelEleven.Position;
-                        movePlayer(11);
+                        MovePlayer(11);
 
                         break;
                     case 11:
@@ -434,7 +442,7 @@ namespace concept_0_03
             #endregion
         }
 
-        private void movePlayer(int _newLevel)
+        private void MovePlayer(int _newLevel)
         {
             currentLevel = _newLevel;
 

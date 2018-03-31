@@ -13,11 +13,14 @@ namespace concept_0_03
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
+
         private bool isMusicOn;
         private bool wasOptionsOpened;
 
         private List<Component> m_components;
         private SoundEffect click;
+
+        #region Question Variables
 
         private string optionOne = "か";
         private string optionTwo = "き";
@@ -26,6 +29,8 @@ namespace concept_0_03
         private string currentWord = "か";
         private string questionBeginning = "Please translate: ";
         private string questionWord = "ka";
+
+        #endregion
 
         private Text m_questionText;
         private Text m_eHealthText;
@@ -61,6 +66,8 @@ namespace concept_0_03
         private Timer canAnswerTimer = new Timer();
         private bool canAnswer = false;
 
+        private Sprite Player;
+
         public FightScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
@@ -83,6 +90,16 @@ namespace concept_0_03
             SpriteFont m_Japanese = content.Load<SpriteFont>("Fonts/Japanese");
             click = content.Load<SoundEffect>("SFX/Select_Click");
             bgSong = content.Load<SoundEffect>("Music/Reformat");
+
+            Sprite ground = new Sprite(content.Load<Texture2D>("standingGround"))
+            {
+                Position = new Vector2(0, 502)
+            };
+
+            Player = new Sprite(Game1.activePlayer_FightTexture)
+            {
+                Position = new Vector2(120, 325)
+            };
 
             #region Music
 
@@ -119,11 +136,15 @@ namespace concept_0_03
 
             #endregion
 
-            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgCloudsSmaller"));
-            screenBackground.Position = new Vector2(-100, -2);
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgCloudsSmaller"))
+            {
+                Position = new Vector2(-100, -2)
+            };
 
-            var questionBackground = new Sprite(content.Load<Texture2D>("textboxes/textbox600x180"));
-            questionBackground.Position = new Vector2(100, 2);
+            var questionBackground = new Sprite(content.Load<Texture2D>("textboxes/textbox600x180"))
+            {
+                Position = new Vector2(100, 2)
+            };
 
             #region Enemy Health Rendering
             fullEnemyHealthText = "Enemy Health: " + enemyHealth;
@@ -135,8 +156,10 @@ namespace concept_0_03
             #endregion
             #region Enemy Health Bar
 
-            e_healthBarMain = new Sprite(fiveHearts);
-            e_healthBarMain.Position = m_eHealthPosition;
+            e_healthBarMain = new Sprite(fiveHearts)
+            {
+                Position = m_eHealthPosition
+            };
 
             #endregion
 
@@ -150,8 +173,10 @@ namespace concept_0_03
             #endregion
             #region Player Health Bar
 
-            p_healthBarMain = new Sprite(fiveHearts);
-            p_healthBarMain.Position = m_pHealthPosition;
+            p_healthBarMain = new Sprite(fiveHearts)
+            {
+                Position = m_pHealthPosition
+            };
 
             #endregion
 
@@ -207,10 +232,14 @@ namespace concept_0_03
                 screenBackground,
                 questionBackground,
 
+                ground,
+
                 answerButton1,
                 answerButton2,
                 answerButton3,
                 answerButton4,
+
+                Player,
             };
         }
 
@@ -355,16 +384,16 @@ namespace concept_0_03
                 case 5:
                     break;
                 case 4:
-                    e_healthBarMain._texture = fourHearts;
+                    e_healthBarMain.Texture = fourHearts;
                     break;
                 case 3:
-                    e_healthBarMain._texture = threeHearts;
+                    e_healthBarMain.Texture = threeHearts;
                     break;
                 case 2:
-                    e_healthBarMain._texture = twoHearts;
+                    e_healthBarMain.Texture = twoHearts;
                     break;
                 case 1:
-                    e_healthBarMain._texture = oneHeart;
+                    e_healthBarMain.Texture = oneHeart;
                     break;
                 case 0:
                     if (Game1.m_audioState == Game1.AudioState.PLAYING)
@@ -379,16 +408,16 @@ namespace concept_0_03
                 case 5:
                     break;
                 case 4:
-                    p_healthBarMain._texture = fourHearts;
+                    p_healthBarMain.Texture = fourHearts;
                     break;
                 case 3:
-                    p_healthBarMain._texture = threeHearts;
+                    p_healthBarMain.Texture = threeHearts;
                     break;
                 case 2:
-                    p_healthBarMain._texture = twoHearts;
+                    p_healthBarMain.Texture = twoHearts;
                     break;
                 case 1:
-                    p_healthBarMain._texture = oneHeart;
+                    p_healthBarMain.Texture = oneHeart;
                     break;
                 case 0:
                     if (Game1.m_audioState == Game1.AudioState.PLAYING)
@@ -446,25 +475,25 @@ namespace concept_0_03
             #region Answer on Button Press
             if (canAnswer)
             {
-                if (oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W))
+                if ((oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W)) || (oldState.IsKeyUp(Keys.Up) && keyboard.IsKeyDown(Keys.Up)))
                 {
                     Answer01_Pressed();
                     canAnswer = false;
                     canAnswerTimer.Start();
                 }
-                if (oldState.IsKeyUp(Keys.A) && keyboard.IsKeyDown(Keys.A))
+                if ((oldState.IsKeyUp(Keys.A) && keyboard.IsKeyDown(Keys.A)) || (oldState.IsKeyUp(Keys.Left) && keyboard.IsKeyDown(Keys.Left)))
                 {
                     Answer02_Pressed();
                     canAnswer = false;
                     canAnswerTimer.Start();
                 }
-                if (oldState.IsKeyUp(Keys.D) && keyboard.IsKeyDown(Keys.D))
+                if ((oldState.IsKeyUp(Keys.D) && keyboard.IsKeyDown(Keys.D)) || (oldState.IsKeyUp(Keys.Right) && keyboard.IsKeyDown(Keys.Right)))
                 {
                     Answer03_Pressed();
                     canAnswer = false;
                     canAnswerTimer.Start();
                 }
-                if (oldState.IsKeyUp(Keys.S) && keyboard.IsKeyDown(Keys.S))
+                if ((oldState.IsKeyUp(Keys.S) && keyboard.IsKeyDown(Keys.S)) || (oldState.IsKeyUp(Keys.Down) && keyboard.IsKeyDown(Keys.Down)))
                 {
                     Answer04_Pressed();
                     canAnswer = false;

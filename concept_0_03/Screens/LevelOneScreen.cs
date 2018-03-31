@@ -80,16 +80,37 @@ namespace concept_0_03
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
             bgSong = content.Load<SoundEffect>("Music/Pixelland");
-            bgMusic = bgSong.CreateInstance();
 
-            bgMusic.IsLooped = true;
-            bgMusic.Play();
+            #region Music
+
+            switch (Game1.m_audioState)
+            {
+                case Game1.AudioState.OFF:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PAUSED:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    break;
+                case Game1.AudioState.PLAYING:
+                    Game1.currentInstance = bgSong.CreateInstance();
+
+                    Game1.currentInstance.IsLooped = true;
+                    Game1.currentInstance.Play();
+                    break;
+            }
+
+            #endregion
 
             Player = new Player(Game1.activePlayerTexture);
-            Obstacle = new Sprite(content.Load<Texture2D>("Enemies/wraith"));
+            Obstacle = new Sprite(content.Load<Texture2D>("Enemies/wraith"))
+            {
+                Position = enemyOnePosition
+            };
 
-            Obstacle.Position = enemyOnePosition;
-            
             m_components = new List<Component>()
             {
                 Player,
@@ -131,7 +152,7 @@ namespace concept_0_03
 
             if (fightStarted == false)
             {
-                fightStartTimer.Elapsed += new ElapsedEventHandler(startFight);
+                fightStartTimer.Elapsed += new ElapsedEventHandler(StartFight);
             }
 
             if (fightStarted == true)
@@ -144,6 +165,9 @@ namespace concept_0_03
                 }
                 else
                 {
+                    if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                        Game1.currentInstance.Stop();
+
                     m_ScreenManager.PushScreen(new FightScreen(m_ScreenManager));
 
                     fightStarted = false;
@@ -156,7 +180,6 @@ namespace concept_0_03
             {
                 isMusicStopped = false;
                 wasOptionsOpen = false;
-                bgMusic.Resume();
             }
             
             #region Enemy One Movement -- CURRENTLY DISABLED
@@ -229,10 +252,13 @@ namespace concept_0_03
             #endregion
         }
 
-        private void startFight(object sender, ElapsedEventArgs e)
+        private void StartFight(object sender, ElapsedEventArgs e)
         {
-            bgMusic.Pause();
             fightStarted = true;
+
+            if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                Game1.currentInstance.Stop();
+
             isMusicStopped = true;
 
             wasFightOpen = true;
@@ -264,7 +290,9 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Back))
             {
-                bgMusic.Pause();
+                if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                    Game1.currentInstance.Stop();
+
                 isMusicStopped = true;
                 wasOptionsOpen = true;
 

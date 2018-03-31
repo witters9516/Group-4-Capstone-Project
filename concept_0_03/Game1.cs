@@ -9,7 +9,9 @@ namespace concept_0_03
     {
         GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+
         public static Texture2D activePlayerTexture;
+        public static Texture2D activePlayer_FightTexture;
 
         public static SoundEffect currentSong;
         public static SoundEffectInstance currentInstance;
@@ -28,14 +30,14 @@ namespace concept_0_03
             RUNNING,
             PAUSED,
             LOADING,
-            IN_FIGHT,
+            IN_FIGHT
         }
 
         public enum AudioState
         {
             PLAYING,
             PAUSED,
-            OFF,
+            OFF
         }
 
         public static GameState m_gameState;

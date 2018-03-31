@@ -27,6 +27,10 @@ namespace concept_0_03
         public static Texture2D player02;
         public static Texture2D player03;
 
+        public static Texture2D player01_Fight;
+        public static Texture2D player02_Fight;
+        public static Texture2D player03_Fight;
+
         private Sprite player01_Box;
         private Sprite player02_Box;
         private Sprite player03_Box;
@@ -89,12 +93,15 @@ namespace concept_0_03
             uncheckedBox = content.Load<Texture2D>("Menu/Grey/grey_circle");
             checkedBox = content.Load<Texture2D>("Menu/Red/red_boxTick");
 
-            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"));
-            screenBackground.Position = new Vector2(-100, -2);
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"))
+            {
+                Position = new Vector2(-100, -2)
+            };
 
-            Sprite backPanel = new Sprite(content.Load<Texture2D>("textboxes/textbox620x400"));
-
-            backPanel.Position = new Vector2(90, 85);
+            Sprite backPanel = new Sprite(content.Load<Texture2D>("textboxes/textbox620x400"))
+            {
+                Position = new Vector2(90, 85)
+            };
 
             #region Character Portraits
 
@@ -122,8 +129,13 @@ namespace concept_0_03
             player02 = content.Load<Texture2D>("Player/player02_Front");
             player03 = content.Load<Texture2D>("Player/player03_Front");
 
+            player01_Fight = content.Load<Texture2D>("Player/player01_Fight");
+            player02_Fight = content.Load<Texture2D>("Player/player02_Fight");
+            player03_Fight = content.Load<Texture2D>("Player/player03_Fight");
+
             whichCharacter = "Player01";
             Game1.activePlayerTexture = player01;
+            Game1.activePlayer_FightTexture = player01_Fight;
 
             #endregion
 
@@ -212,6 +224,8 @@ namespace concept_0_03
             click.Play();
 
             Game1.activePlayerTexture = player01;
+            Game1.activePlayer_FightTexture = player01_Fight;
+
             whichCharacter = "Player01";
         }
 
@@ -220,6 +234,8 @@ namespace concept_0_03
             click.Play();
 
             Game1.activePlayerTexture = player02;
+            Game1.activePlayer_FightTexture = player02_Fight;
+
             whichCharacter = "Player02";
         }
 
@@ -228,6 +244,8 @@ namespace concept_0_03
             click.Play();
 
             Game1.activePlayerTexture = player03;
+            Game1.activePlayer_FightTexture = player03_Fight;
+
             whichCharacter = "Player03";
         }
 
@@ -250,21 +268,21 @@ namespace concept_0_03
 
             if (whichCharacter == "Player01")
             {
-                player01_Box._texture = checkedBox;
-                player02_Box._texture = uncheckedBox;
-                player03_Box._texture = uncheckedBox;
+                player01_Box.Texture = checkedBox;
+                player02_Box.Texture = uncheckedBox;
+                player03_Box.Texture = uncheckedBox;
             }
             else if (whichCharacter == "Player02")
             {
-                player01_Box._texture = uncheckedBox;
-                player02_Box._texture = checkedBox;
-                player03_Box._texture = uncheckedBox;
+                player01_Box.Texture = uncheckedBox;
+                player02_Box.Texture = checkedBox;
+                player03_Box.Texture = uncheckedBox;
             }
             else if (whichCharacter == "Player03")
             {
-                player01_Box._texture = uncheckedBox;
-                player02_Box._texture = uncheckedBox;
-                player03_Box._texture = checkedBox;
+                player01_Box.Texture = uncheckedBox;
+                player02_Box.Texture = uncheckedBox;
+                player03_Box.Texture = checkedBox;
             }
         }
 

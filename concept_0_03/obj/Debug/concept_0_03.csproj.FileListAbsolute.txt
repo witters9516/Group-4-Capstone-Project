@@ -763,3 +763,8 @@ C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Cap
 C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox620x400.xnb
 C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\WorldMap\levelEntrance.xnb
 C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\WorldMap\map.xnb
+C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player01_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player02_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player03_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\NPCs\carl.xnb
+C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\standingGround.xnb
