@@ -238,20 +238,28 @@ namespace concept_0_03
                     Companion.Position = new Vector2(LevelThree.Position.X + 50, LevelThree.Position.Y + 2);
                     break;
                 case 4:
+                    Companion.Position = new Vector2(LevelFour.Position.X + 50, LevelFour.Position.Y + 2);
                     break;
                 case 5:
+                    Companion.Position = new Vector2(LevelFive.Position.X + 50, LevelFive.Position.Y + 2);
                     break;
                 case 6:
+                    Companion.Position = new Vector2(LevelSix.Position.X + 50, LevelSix.Position.Y + 2);
                     break;
                 case 7:
+                    Companion.Position = new Vector2(LevelSeven.Position.X + 50, LevelSeven.Position.Y + 2);
                     break;
                 case 8:
+                    Companion.Position = new Vector2(LevelEight.Position.X + 50, LevelEight.Position.Y + 2);
                     break;
                 case 9:
+                    Companion.Position = new Vector2(LevelNine.Position.X + 50, LevelNine.Position.Y + 2);
                     break;
                 case 10:
+                    Companion.Position = new Vector2(LevelTen.Position.X + 50, LevelTen.Position.Y + 2);
                     break;
                 case 11:
+                    Companion.Position = new Vector2(LevelEleven.Position.X + 50, LevelEleven.Position.Y + 2);
                     break;
                 case 12:
                     break;
