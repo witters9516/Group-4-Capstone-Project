@@ -221,6 +221,44 @@ namespace concept_0_03
                 component.Update(gameTime);
 
             moveToNextLevel.Elapsed += MoveToNextLevel_Elapsed;
+
+            #region Move Companion to Current Locked Level
+
+            switch (levelsUnlocked)
+            {
+                case 0:
+                    break;
+                case 1:
+                    Companion.Position = new Vector2(LevelOne.Position.X + 50, LevelOne.Position.Y + 2);
+                    break;
+                case 2:
+                    Companion.Position = new Vector2(LevelTwo.Position.X - 50, LevelTwo.Position.Y + 2);
+                    break;
+                case 3:
+                    Companion.Position = new Vector2(LevelThree.Position.X + 50, LevelThree.Position.Y + 2);
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    break;
+                case 9:
+                    break;
+                case 10:
+                    break;
+                case 11:
+                    break;
+                case 12:
+                    break;
+
+            }
+
+            #endregion
         }
 
         private void MoveToNextLevel_Elapsed(object sender, ElapsedEventArgs e)
