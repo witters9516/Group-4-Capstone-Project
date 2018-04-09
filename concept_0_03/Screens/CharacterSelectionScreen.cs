@@ -15,6 +15,7 @@ namespace concept_0_03
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
+        private Command m_command;
 
         private List<Component> m_components;
         private SoundEffect click;
@@ -50,6 +51,7 @@ namespace concept_0_03
         public CharacterSelectionScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
+            m_command = new Command(m_ScreenManager);
         }
 
         public void ChangeBetweenScreens()
@@ -63,7 +65,6 @@ namespace concept_0_03
         public void Init(ContentManager content)
         {
             click = content.Load<SoundEffect>("SFX/Select_Click");
-
             bgSong = content.Load<SoundEffect>("Music/Off to Osaka");
 
             #region Music
@@ -213,40 +214,28 @@ namespace concept_0_03
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            if (Game1.m_audioState == Game1.AudioState.PLAYING)
-                Game1.currentInstance.Stop();
-
-            m_ScreenManager.ChangeScreen(new WorldMapScreen(m_ScreenManager));
+            m_command.StartGame(m_ScreenManager);
         }
 
         private void Character01Button_Click(object sender, EventArgs e)
         {
             click.Play();
 
-            Game1.activePlayerTexture = player01;
-            Game1.activePlayer_FightTexture = player01_Fight;
-
-            whichCharacter = "Player01";
+            whichCharacter = m_command.ChoosePlayerOne();
         }
 
         private void Character02Button_Click(object sender, EventArgs e)
         {
             click.Play();
 
-            Game1.activePlayerTexture = player02;
-            Game1.activePlayer_FightTexture = player02_Fight;
-
-            whichCharacter = "Player02";
+            whichCharacter = m_command.ChoosePlayerTwo();
         }
 
         private void Character03Button_Click(object sender, EventArgs e)
         {
             click.Play();
 
-            Game1.activePlayerTexture = player03;
-            Game1.activePlayer_FightTexture = player03_Fight;
-
-            whichCharacter = "Player03";
+            whichCharacter = m_command.ChoosePlayerThree();
         }
 
         #endregion
@@ -307,7 +296,7 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Back))
             {
-                m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
+                m_command.OpenOptionsMenu(m_ScreenManager);
             }
         }
 

@@ -7,12 +7,14 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
+
 namespace concept_0_03
 {
     class WorldMapScreen : IGameScreen
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
+        private Command m_command;
 
         public bool IsPaused { get; private set; }
 
@@ -49,11 +51,14 @@ namespace concept_0_03
         private LevelEntrance LevelEleven;
         #endregion
 
+        public int levelsUnlocked = 1;
+
         #endregion
 
         public WorldMapScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
+            m_command = new Command(m_ScreenManager);
 
             #region Timer Stuff
             
@@ -244,57 +249,14 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Back))
             {
-                m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
+                m_command.OpenOptionsMenu(m_ScreenManager);
             }
 
             #region Enter Level
 
             if (keyboard.IsKeyDown(Keys.Enter))
             {
-                switch (currentLevel)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                        if (Game1.m_audioState == Game1.AudioState.PLAYING)
-                            Game1.currentInstance.Stop();
-
-                        m_ScreenManager.PushScreen(new LevelOneScreen(m_ScreenManager));
-                        break;
-                    case 2:
-
-                        break;
-                    case 3:
-
-                        break;
-                    case 4:
-
-                        break;
-                    case 5:
-
-                        break;
-                    case 6:
-
-                        break;
-                    case 7:
-
-                        break;
-                    case 8:
-
-                        break;
-                    case 9:
-
-                        break;
-                    case 10:
-
-                        break;
-                    case 11:
-
-                        break;
-                    case 12:
-
-                        break;
-                }
+                levelsUnlocked = m_command.EnterLevel(currentLevel, m_ScreenManager, levelsUnlocked);
             }
 
             #endregion

@@ -24,7 +24,7 @@ namespace concept_0_03
 
         private string optionOne = "か";
         private string optionTwo = "き";
-        private string optionThree = "こ";
+        private string optionThree = "み";
         private string optionFour = "く";
         private string currentWord = "か";
         private string questionBeginning = "Please translate: ";
@@ -74,6 +74,14 @@ namespace concept_0_03
 
             canAnswerTimer.Interval = 400;
             canAnswerTimer.Start();
+        }
+
+        public FightScreen(IGameScreenManager gameScreenManager, string m_currentWord, string m_questionWord)
+        {
+            m_ScreenManager = gameScreenManager;
+
+            currentWord = m_currentWord;
+            questionWord = m_questionWord;
         }
 
         public void ChangeBetweenScreens()

@@ -57,6 +57,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Core\Command.cs" />
     <Compile Include="FillQuestionsListClass.cs" />
     <Compile Include="LetterClass.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -79,6 +80,7 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameScreenManager.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="Screens\LevelTwoScreen.cs" />
     <Compile Include="Screens\OptionsScreen.cs" />
     <Compile Include="Screens\LevelOneScreen.cs" />
     <Compile Include="Screens\MenuScreen.cs" />

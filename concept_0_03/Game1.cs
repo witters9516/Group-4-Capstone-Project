@@ -107,27 +107,5 @@ namespace concept_0_03
 
             base.Draw(gameTime);
         }
-
-        public static void ToggleAudio()
-        {
-            switch (m_audioState)
-            {
-                case AudioState.OFF:
-                    currentInstance.Stop();
-
-                    m_audioState = AudioState.PLAYING;
-                    break;
-                case AudioState.PAUSED:
-                    currentInstance.Stop();
-
-                    m_audioState = AudioState.PLAYING;
-                    break;
-                case AudioState.PLAYING:
-                    currentInstance.Play();
-
-                    m_audioState = AudioState.PAUSED;
-                    break;
-            }
-        }
     }
 }
