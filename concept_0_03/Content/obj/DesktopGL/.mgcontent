@@ -4,7 +4,6 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Japanese.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Font.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/SmallFont.spritefont</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/TitleFont.spritefont</File>
@@ -97,15 +96,12 @@
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Music/Reformat.mp3</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/SFX/Select_Click.wav</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/block.png</File>
-    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/collision_wall.png</File>
-    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/collision_wall_transparent.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player01_Front.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player02_Front.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player03_Front.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player01_port.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player02_port.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player03_port.png</File>
-    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/fighttextbox_notail.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/a.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/ba.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/da.png</File>
@@ -120,5 +116,34 @@
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/wa.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/ya.png</File>
     <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/za.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Fonts/Japanese.spritefont</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/map wip.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/0.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/1.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/2.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/3.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/4.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Health/5.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgClouds.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgMountains.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgTrees.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgWaterfall.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgMountainsSmaller.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgCloudsSmaller.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/WorldMap/levelEntrance.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Enemies/wraith.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox300x150.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x180.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x200.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x225.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x300.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x400.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox620x400.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/WorldMap/map.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player01_Fight.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player02_Fight.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/Player/player03_Fight.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/NPCs/carl.png</File>
+    <File>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/standingGround.png</File>
   </SourceFiles>
 </SourceFileCollection>
