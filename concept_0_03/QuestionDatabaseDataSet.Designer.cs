@@ -26,6 +26,8 @@ namespace concept_0_03 {
         
         private HiraganaDataTable tableHiragana;
         
+        private GetRowDataTable tableGetRow;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -57,6 +59,9 @@ namespace concept_0_03 {
                 if ((ds.Tables["Hiragana"] != null)) {
                     base.Tables.Add(new HiraganaDataTable(ds.Tables["Hiragana"]));
                 }
+                if ((ds.Tables["GetRow"] != null)) {
+                    base.Tables.Add(new GetRowDataTable(ds.Tables["GetRow"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -82,6 +87,16 @@ namespace concept_0_03 {
         public HiraganaDataTable Hiragana {
             get {
                 return this.tableHiragana;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public GetRowDataTable GetRow {
+            get {
+                return this.tableGetRow;
             }
         }
         
@@ -155,6 +170,9 @@ namespace concept_0_03 {
                 if ((ds.Tables["Hiragana"] != null)) {
                     base.Tables.Add(new HiraganaDataTable(ds.Tables["Hiragana"]));
                 }
+                if ((ds.Tables["GetRow"] != null)) {
+                    base.Tables.Add(new GetRowDataTable(ds.Tables["GetRow"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -194,6 +212,12 @@ namespace concept_0_03 {
                     this.tableHiragana.InitVars();
                 }
             }
+            this.tableGetRow = ((GetRowDataTable)(base.Tables["GetRow"]));
+            if ((initTable == true)) {
+                if ((this.tableGetRow != null)) {
+                    this.tableGetRow.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -206,11 +230,19 @@ namespace concept_0_03 {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableHiragana = new HiraganaDataTable();
             base.Tables.Add(this.tableHiragana);
+            this.tableGetRow = new GetRowDataTable();
+            base.Tables.Add(this.tableGetRow);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeHiragana() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeGetRow() {
             return false;
         }
         
@@ -271,6 +303,9 @@ namespace concept_0_03 {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void HiraganaRowChangeEventHandler(object sender, HiraganaRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void GetRowRowChangeEventHandler(object sender, GetRowRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -772,6 +807,505 @@ namespace concept_0_03 {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class GetRowDataTable : global::System.Data.TypedTableBase<GetRowRow> {
+            
+            private global::System.Data.DataColumn columnHiraganaID;
+            
+            private global::System.Data.DataColumn columnLetterImage;
+            
+            private global::System.Data.DataColumn columnLetterName;
+            
+            private global::System.Data.DataColumn columnQuestion1;
+            
+            private global::System.Data.DataColumn columnQ1Image;
+            
+            private global::System.Data.DataColumn columnQ1Answer1;
+            
+            private global::System.Data.DataColumn columnQ1Answer2;
+            
+            private global::System.Data.DataColumn columnQ1Answer3;
+            
+            private global::System.Data.DataColumn columnQ1Answer4;
+            
+            private global::System.Data.DataColumn columnQ1CorrectAnswer;
+            
+            private global::System.Data.DataColumn columnQuestion2;
+            
+            private global::System.Data.DataColumn columnQ2Answer1;
+            
+            private global::System.Data.DataColumn columnQ2Answer2;
+            
+            private global::System.Data.DataColumn columnQ2Answer3;
+            
+            private global::System.Data.DataColumn columnQ2Answer4;
+            
+            private global::System.Data.DataColumn columnQ2CorrectAnswer;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowDataTable() {
+                this.TableName = "GetRow";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetRowDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected GetRowDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HiraganaIDColumn {
+                get {
+                    return this.columnHiraganaID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LetterImageColumn {
+                get {
+                    return this.columnLetterImage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LetterNameColumn {
+                get {
+                    return this.columnLetterName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Question1Column {
+                get {
+                    return this.columnQuestion1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1ImageColumn {
+                get {
+                    return this.columnQ1Image;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1Answer1Column {
+                get {
+                    return this.columnQ1Answer1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1Answer2Column {
+                get {
+                    return this.columnQ1Answer2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1Answer3Column {
+                get {
+                    return this.columnQ1Answer3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1Answer4Column {
+                get {
+                    return this.columnQ1Answer4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q1CorrectAnswerColumn {
+                get {
+                    return this.columnQ1CorrectAnswer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Question2Column {
+                get {
+                    return this.columnQuestion2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q2Answer1Column {
+                get {
+                    return this.columnQ2Answer1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q2Answer2Column {
+                get {
+                    return this.columnQ2Answer2;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q2Answer3Column {
+                get {
+                    return this.columnQ2Answer3;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q2Answer4Column {
+                get {
+                    return this.columnQ2Answer4;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn Q2CorrectAnswerColumn {
+                get {
+                    return this.columnQ2CorrectAnswer;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRow this[int index] {
+                get {
+                    return ((GetRowRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetRowRowChangeEventHandler GetRowRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetRowRowChangeEventHandler GetRowRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetRowRowChangeEventHandler GetRowRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event GetRowRowChangeEventHandler GetRowRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddGetRowRow(GetRowRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRow AddGetRowRow(
+                        int HiraganaID, 
+                        string LetterImage, 
+                        string LetterName, 
+                        string Question1, 
+                        string Q1Image, 
+                        string Q1Answer1, 
+                        string Q1Answer2, 
+                        string Q1Answer3, 
+                        string Q1Answer4, 
+                        string Q1CorrectAnswer, 
+                        string Question2, 
+                        string Q2Answer1, 
+                        string Q2Answer2, 
+                        string Q2Answer3, 
+                        string Q2Answer4, 
+                        string Q2CorrectAnswer) {
+                GetRowRow rowGetRowRow = ((GetRowRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        HiraganaID,
+                        LetterImage,
+                        LetterName,
+                        Question1,
+                        Q1Image,
+                        Q1Answer1,
+                        Q1Answer2,
+                        Q1Answer3,
+                        Q1Answer4,
+                        Q1CorrectAnswer,
+                        Question2,
+                        Q2Answer1,
+                        Q2Answer2,
+                        Q2Answer3,
+                        Q2Answer4,
+                        Q2CorrectAnswer};
+                rowGetRowRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowGetRowRow);
+                return rowGetRowRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRow FindByHiraganaID(int HiraganaID) {
+                return ((GetRowRow)(this.Rows.Find(new object[] {
+                            HiraganaID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                GetRowDataTable cln = ((GetRowDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new GetRowDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnHiraganaID = base.Columns["HiraganaID"];
+                this.columnLetterImage = base.Columns["LetterImage"];
+                this.columnLetterName = base.Columns["LetterName"];
+                this.columnQuestion1 = base.Columns["Question1"];
+                this.columnQ1Image = base.Columns["Q1Image"];
+                this.columnQ1Answer1 = base.Columns["Q1Answer1"];
+                this.columnQ1Answer2 = base.Columns["Q1Answer2"];
+                this.columnQ1Answer3 = base.Columns["Q1Answer3"];
+                this.columnQ1Answer4 = base.Columns["Q1Answer4"];
+                this.columnQ1CorrectAnswer = base.Columns["Q1CorrectAnswer"];
+                this.columnQuestion2 = base.Columns["Question2"];
+                this.columnQ2Answer1 = base.Columns["Q2Answer1"];
+                this.columnQ2Answer2 = base.Columns["Q2Answer2"];
+                this.columnQ2Answer3 = base.Columns["Q2Answer3"];
+                this.columnQ2Answer4 = base.Columns["Q2Answer4"];
+                this.columnQ2CorrectAnswer = base.Columns["Q2CorrectAnswer"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnHiraganaID = new global::System.Data.DataColumn("HiraganaID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHiraganaID);
+                this.columnLetterImage = new global::System.Data.DataColumn("LetterImage", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLetterImage);
+                this.columnLetterName = new global::System.Data.DataColumn("LetterName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLetterName);
+                this.columnQuestion1 = new global::System.Data.DataColumn("Question1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion1);
+                this.columnQ1Image = new global::System.Data.DataColumn("Q1Image", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1Image);
+                this.columnQ1Answer1 = new global::System.Data.DataColumn("Q1Answer1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1Answer1);
+                this.columnQ1Answer2 = new global::System.Data.DataColumn("Q1Answer2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1Answer2);
+                this.columnQ1Answer3 = new global::System.Data.DataColumn("Q1Answer3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1Answer3);
+                this.columnQ1Answer4 = new global::System.Data.DataColumn("Q1Answer4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1Answer4);
+                this.columnQ1CorrectAnswer = new global::System.Data.DataColumn("Q1CorrectAnswer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ1CorrectAnswer);
+                this.columnQuestion2 = new global::System.Data.DataColumn("Question2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuestion2);
+                this.columnQ2Answer1 = new global::System.Data.DataColumn("Q2Answer1", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ2Answer1);
+                this.columnQ2Answer2 = new global::System.Data.DataColumn("Q2Answer2", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ2Answer2);
+                this.columnQ2Answer3 = new global::System.Data.DataColumn("Q2Answer3", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ2Answer3);
+                this.columnQ2Answer4 = new global::System.Data.DataColumn("Q2Answer4", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ2Answer4);
+                this.columnQ2CorrectAnswer = new global::System.Data.DataColumn("Q2CorrectAnswer", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQ2CorrectAnswer);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnHiraganaID}, true));
+                this.columnHiraganaID.AllowDBNull = false;
+                this.columnHiraganaID.Unique = true;
+                this.columnLetterImage.MaxLength = 50;
+                this.columnLetterName.MaxLength = 10;
+                this.columnQuestion1.MaxLength = 255;
+                this.columnQ1Image.MaxLength = 50;
+                this.columnQ1Answer1.MaxLength = 50;
+                this.columnQ1Answer2.MaxLength = 50;
+                this.columnQ1Answer3.MaxLength = 50;
+                this.columnQ1Answer4.MaxLength = 50;
+                this.columnQ1CorrectAnswer.MaxLength = 50;
+                this.columnQuestion2.MaxLength = 50;
+                this.columnQ2Answer1.MaxLength = 50;
+                this.columnQ2Answer2.MaxLength = 50;
+                this.columnQ2Answer3.MaxLength = 50;
+                this.columnQ2Answer4.MaxLength = 50;
+                this.columnQ2CorrectAnswer.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRow NewGetRowRow() {
+                return ((GetRowRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new GetRowRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(GetRowRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.GetRowRowChanged != null)) {
+                    this.GetRowRowChanged(this, new GetRowRowChangeEvent(((GetRowRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.GetRowRowChanging != null)) {
+                    this.GetRowRowChanging(this, new GetRowRowChangeEvent(((GetRowRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.GetRowRowDeleted != null)) {
+                    this.GetRowRowDeleted(this, new GetRowRowChangeEvent(((GetRowRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.GetRowRowDeleting != null)) {
+                    this.GetRowRowDeleting(this, new GetRowRowChangeEvent(((GetRowRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveGetRowRow(GetRowRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                QuestionDatabaseDataSet ds = new QuestionDatabaseDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "GetRowDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class HiraganaRow : global::System.Data.DataRow {
@@ -1218,6 +1752,452 @@ namespace concept_0_03 {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class GetRowRow : global::System.Data.DataRow {
+            
+            private GetRowDataTable tableGetRow;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal GetRowRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableGetRow = ((GetRowDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int HiraganaID {
+                get {
+                    return ((int)(this[this.tableGetRow.HiraganaIDColumn]));
+                }
+                set {
+                    this[this.tableGetRow.HiraganaIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LetterImage {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.LetterImageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LetterImage\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.LetterImageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LetterName {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.LetterNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'LetterName\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.LetterNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Question1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Question1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Question1\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Question1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1Image {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1ImageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1Image\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1ImageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1Answer1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1Answer1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1Answer1\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1Answer1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1Answer2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1Answer2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1Answer2\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1Answer2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1Answer3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1Answer3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1Answer3\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1Answer3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1Answer4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1Answer4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1Answer4\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1Answer4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q1CorrectAnswer {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q1CorrectAnswerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q1CorrectAnswer\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q1CorrectAnswerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Question2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Question2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Question2\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Question2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q2Answer1 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q2Answer1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q2Answer1\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q2Answer1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q2Answer2 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q2Answer2Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q2Answer2\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q2Answer2Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q2Answer3 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q2Answer3Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q2Answer3\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q2Answer3Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q2Answer4 {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q2Answer4Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q2Answer4\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q2Answer4Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Q2CorrectAnswer {
+                get {
+                    try {
+                        return ((string)(this[this.tableGetRow.Q2CorrectAnswerColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Q2CorrectAnswer\' in table \'GetRow\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGetRow.Q2CorrectAnswerColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLetterImageNull() {
+                return this.IsNull(this.tableGetRow.LetterImageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLetterImageNull() {
+                this[this.tableGetRow.LetterImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsLetterNameNull() {
+                return this.IsNull(this.tableGetRow.LetterNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetLetterNameNull() {
+                this[this.tableGetRow.LetterNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuestion1Null() {
+                return this.IsNull(this.tableGetRow.Question1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuestion1Null() {
+                this[this.tableGetRow.Question1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1ImageNull() {
+                return this.IsNull(this.tableGetRow.Q1ImageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1ImageNull() {
+                this[this.tableGetRow.Q1ImageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1Answer1Null() {
+                return this.IsNull(this.tableGetRow.Q1Answer1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1Answer1Null() {
+                this[this.tableGetRow.Q1Answer1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1Answer2Null() {
+                return this.IsNull(this.tableGetRow.Q1Answer2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1Answer2Null() {
+                this[this.tableGetRow.Q1Answer2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1Answer3Null() {
+                return this.IsNull(this.tableGetRow.Q1Answer3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1Answer3Null() {
+                this[this.tableGetRow.Q1Answer3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1Answer4Null() {
+                return this.IsNull(this.tableGetRow.Q1Answer4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1Answer4Null() {
+                this[this.tableGetRow.Q1Answer4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ1CorrectAnswerNull() {
+                return this.IsNull(this.tableGetRow.Q1CorrectAnswerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ1CorrectAnswerNull() {
+                this[this.tableGetRow.Q1CorrectAnswerColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQuestion2Null() {
+                return this.IsNull(this.tableGetRow.Question2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQuestion2Null() {
+                this[this.tableGetRow.Question2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ2Answer1Null() {
+                return this.IsNull(this.tableGetRow.Q2Answer1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ2Answer1Null() {
+                this[this.tableGetRow.Q2Answer1Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ2Answer2Null() {
+                return this.IsNull(this.tableGetRow.Q2Answer2Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ2Answer2Null() {
+                this[this.tableGetRow.Q2Answer2Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ2Answer3Null() {
+                return this.IsNull(this.tableGetRow.Q2Answer3Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ2Answer3Null() {
+                this[this.tableGetRow.Q2Answer3Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ2Answer4Null() {
+                return this.IsNull(this.tableGetRow.Q2Answer4Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ2Answer4Null() {
+                this[this.tableGetRow.Q2Answer4Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsQ2CorrectAnswerNull() {
+                return this.IsNull(this.tableGetRow.Q2CorrectAnswerColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetQ2CorrectAnswerNull() {
+                this[this.tableGetRow.Q2CorrectAnswerColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1237,6 +2217,40 @@ namespace concept_0_03 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public HiraganaRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class GetRowRowChangeEvent : global::System.EventArgs {
+            
+            private GetRowRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRowChangeEvent(GetRowRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public GetRowRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1558,23 +2572,13 @@ SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Ans
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Answ" +
                 "er2, Q1Answer3, Q1Answer4, Q1CorrectAnswer, Question2, Q2Answer1, Q2Answer2, Q2A" +
                 "nswer3, Q2Answer4, Q2CorrectAnswer FROM dbo.Hiragana";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        COUNT(*) AS Count\r\nFROM            Hiragana";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "dbo.GetRow";
-            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDValue", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1596,23 +2600,6 @@ SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Ans
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual QuestionDatabaseDataSet.HiraganaDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            QuestionDatabaseDataSet.HiraganaDataTable dataTable = new QuestionDatabaseDataSet.HiraganaDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual QuestionDatabaseDataSet.HiraganaDataTable GetDataRow(global::System.Nullable<int> IDValue) {
-            this.Adapter.SelectCommand = this.CommandCollection[2];
-            if ((IDValue.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IDValue.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
             QuestionDatabaseDataSet.HiraganaDataTable dataTable = new QuestionDatabaseDataSet.HiraganaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -2236,33 +3223,201 @@ SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Ans
                     string Original_Q2CorrectAnswer) {
             return this.Update(Original_HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Answer2, Q1Answer3, Q1Answer4, Q1CorrectAnswer, Question2, Q2Answer1, Q2Answer2, Q2Answer3, Q2Answer4, Q2CorrectAnswer, Original_HiraganaID, Original_LetterImage, Original_LetterName, Original_Question1, Original_Q1Image, Original_Q1Answer1, Original_Q1Answer2, Original_Q1Answer3, Original_Q1Answer4, Original_Q1CorrectAnswer, Original_Question2, Original_Q2Answer1, Original_Q2Answer2, Original_Q2Answer3, Original_Q2Answer4, Original_Q2CorrectAnswer);
         }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class GetRowTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public GetRowTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "GetRow";
+            tableMapping.ColumnMappings.Add("HiraganaID", "HiraganaID");
+            tableMapping.ColumnMappings.Add("LetterImage", "LetterImage");
+            tableMapping.ColumnMappings.Add("LetterName", "LetterName");
+            tableMapping.ColumnMappings.Add("Question1", "Question1");
+            tableMapping.ColumnMappings.Add("Q1Image", "Q1Image");
+            tableMapping.ColumnMappings.Add("Q1Answer1", "Q1Answer1");
+            tableMapping.ColumnMappings.Add("Q1Answer2", "Q1Answer2");
+            tableMapping.ColumnMappings.Add("Q1Answer3", "Q1Answer3");
+            tableMapping.ColumnMappings.Add("Q1Answer4", "Q1Answer4");
+            tableMapping.ColumnMappings.Add("Q1CorrectAnswer", "Q1CorrectAnswer");
+            tableMapping.ColumnMappings.Add("Question2", "Question2");
+            tableMapping.ColumnMappings.Add("Q2Answer1", "Q2Answer1");
+            tableMapping.ColumnMappings.Add("Q2Answer2", "Q2Answer2");
+            tableMapping.ColumnMappings.Add("Q2Answer3", "Q2Answer3");
+            tableMapping.ColumnMappings.Add("Q2Answer4", "Q2Answer4");
+            tableMapping.ColumnMappings.Add("Q2CorrectAnswer", "Q2CorrectAnswer");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::concept_0_03.Properties.Settings.Default.QuestionDatabaseConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "dbo.GetRow";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IDValue", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual global::System.Nullable<int> GetCount() {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            object returnValue;
-            try {
-                returnValue = command.ExecuteScalar();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            if (((returnValue == null) 
-                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
-                return new global::System.Nullable<int>();
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(QuestionDatabaseDataSet.GetRowDataTable dataTable, global::System.Nullable<int> IDValue) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IDValue.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IDValue.Value));
             }
             else {
-                return new global::System.Nullable<int>(((int)(returnValue)));
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual QuestionDatabaseDataSet.GetRowDataTable GetData(global::System.Nullable<int> IDValue) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((IDValue.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(IDValue.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            QuestionDatabaseDataSet.GetRowDataTable dataTable = new QuestionDatabaseDataSet.GetRowDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

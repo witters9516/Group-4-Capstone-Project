@@ -10,6 +10,8 @@ namespace concept_0_03
 {
     class FightScreen : IGameScreen
     {
+        FillQuestionsListClass temp = new FillQuestionsListClass();
+
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
         private bool isMusicOn;

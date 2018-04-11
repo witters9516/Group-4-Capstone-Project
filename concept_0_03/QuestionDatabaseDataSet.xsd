@@ -73,7 +73,7 @@ SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Ans
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Answer2, Q1Answer3, Q1Answer4, Q1CorrectAnswer, Question2, Q2Answer1, Q2Answer2, Q2Answer3, Q2Answer4, Q2CorrectAnswer FROM dbo.Hiragana</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -153,17 +153,11 @@ SELECT HiraganaID, LetterImage, LetterName, Question1, Q1Image, Q1Answer1, Q1Ans
               <Mapping SourceColumn="Q2Answer4" DataSetColumn="Q2Answer4" />
               <Mapping SourceColumn="Q2CorrectAnswer" DataSetColumn="Q2CorrectAnswer" />
             </Mappings>
-            <Sources>
-              <DbSource ConnectionRef="QuestionDatabaseConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="GetCount" Modifier="Public" Name="GetCount" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="GetCount">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        COUNT(*) AS Count
-FROM            Hiragana</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-              <DbSource ConnectionRef="QuestionDatabaseConnectionString (Settings)" DbObjectName="[C:\USERS\USER\DOCUMENTS\GITHUB\GROUP-4-CAPSTONE-PROJECT\CONCEPT_0_03\QUESTIONDATABASE.MDF].dbo.GetRow" DbObjectType="StoredProcedure" GenerateMethods="Get" GenerateShortCommands="true" GeneratorGetMethodName="GetDataRow" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataRow" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataRow" UserSourceName="GetDataRow">
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GetRowTableAdapter" GeneratorDataComponentClassName="GetRowTableAdapter" Name="GetRow" UserDataComponentName="GetRowTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="QuestionDatabaseConnectionString (Settings)" DbObjectName="dbo.GetRow" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.GetRow</CommandText>
@@ -174,7 +168,26 @@ FROM            Hiragana</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-            </Sources>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="HiraganaID" DataSetColumn="HiraganaID" />
+              <Mapping SourceColumn="LetterImage" DataSetColumn="LetterImage" />
+              <Mapping SourceColumn="LetterName" DataSetColumn="LetterName" />
+              <Mapping SourceColumn="Question1" DataSetColumn="Question1" />
+              <Mapping SourceColumn="Q1Image" DataSetColumn="Q1Image" />
+              <Mapping SourceColumn="Q1Answer1" DataSetColumn="Q1Answer1" />
+              <Mapping SourceColumn="Q1Answer2" DataSetColumn="Q1Answer2" />
+              <Mapping SourceColumn="Q1Answer3" DataSetColumn="Q1Answer3" />
+              <Mapping SourceColumn="Q1Answer4" DataSetColumn="Q1Answer4" />
+              <Mapping SourceColumn="Q1CorrectAnswer" DataSetColumn="Q1CorrectAnswer" />
+              <Mapping SourceColumn="Question2" DataSetColumn="Question2" />
+              <Mapping SourceColumn="Q2Answer1" DataSetColumn="Q2Answer1" />
+              <Mapping SourceColumn="Q2Answer2" DataSetColumn="Q2Answer2" />
+              <Mapping SourceColumn="Q2Answer3" DataSetColumn="Q2Answer3" />
+              <Mapping SourceColumn="Q2Answer4" DataSetColumn="Q2Answer4" />
+              <Mapping SourceColumn="Q2CorrectAnswer" DataSetColumn="Q2CorrectAnswer" />
+            </Mappings>
+            <Sources />
           </TableAdapter>
         </Tables>
         <Sources />
@@ -296,10 +309,126 @@ FROM            Hiragana</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="GetRow" msprop:Generator_TableClassName="GetRowDataTable" msprop:Generator_TableVarName="tableGetRow" msprop:Generator_TablePropName="GetRow" msprop:Generator_RowDeletingName="GetRowRowDeleting" msprop:Generator_RowChangingName="GetRowRowChanging" msprop:Generator_RowEvHandlerName="GetRowRowChangeEventHandler" msprop:Generator_RowDeletedName="GetRowRowDeleted" msprop:Generator_UserTableName="GetRow" msprop:Generator_RowChangedName="GetRowRowChanged" msprop:Generator_RowEvArgName="GetRowRowChangeEvent" msprop:Generator_RowClassName="GetRowRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HiraganaID" msprop:Generator_ColumnVarNameInTable="columnHiraganaID" msprop:Generator_ColumnPropNameInRow="HiraganaID" msprop:Generator_ColumnPropNameInTable="HiraganaIDColumn" msprop:Generator_UserColumnName="HiraganaID" type="xs:int" />
+              <xs:element name="LetterImage" msprop:Generator_ColumnVarNameInTable="columnLetterImage" msprop:Generator_ColumnPropNameInRow="LetterImage" msprop:Generator_ColumnPropNameInTable="LetterImageColumn" msprop:Generator_UserColumnName="LetterImage" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LetterName" msprop:Generator_ColumnVarNameInTable="columnLetterName" msprop:Generator_ColumnPropNameInRow="LetterName" msprop:Generator_ColumnPropNameInTable="LetterNameColumn" msprop:Generator_UserColumnName="LetterName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Question1" msprop:Generator_ColumnVarNameInTable="columnQuestion1" msprop:Generator_ColumnPropNameInRow="Question1" msprop:Generator_ColumnPropNameInTable="Question1Column" msprop:Generator_UserColumnName="Question1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1Image" msprop:Generator_ColumnVarNameInTable="columnQ1Image" msprop:Generator_ColumnPropNameInRow="Q1Image" msprop:Generator_ColumnPropNameInTable="Q1ImageColumn" msprop:Generator_UserColumnName="Q1Image" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1Answer1" msprop:Generator_ColumnVarNameInTable="columnQ1Answer1" msprop:Generator_ColumnPropNameInRow="Q1Answer1" msprop:Generator_ColumnPropNameInTable="Q1Answer1Column" msprop:Generator_UserColumnName="Q1Answer1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1Answer2" msprop:Generator_ColumnVarNameInTable="columnQ1Answer2" msprop:Generator_ColumnPropNameInRow="Q1Answer2" msprop:Generator_ColumnPropNameInTable="Q1Answer2Column" msprop:Generator_UserColumnName="Q1Answer2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1Answer3" msprop:Generator_ColumnVarNameInTable="columnQ1Answer3" msprop:Generator_ColumnPropNameInRow="Q1Answer3" msprop:Generator_ColumnPropNameInTable="Q1Answer3Column" msprop:Generator_UserColumnName="Q1Answer3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1Answer4" msprop:Generator_ColumnVarNameInTable="columnQ1Answer4" msprop:Generator_ColumnPropNameInRow="Q1Answer4" msprop:Generator_ColumnPropNameInTable="Q1Answer4Column" msprop:Generator_UserColumnName="Q1Answer4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q1CorrectAnswer" msprop:Generator_ColumnVarNameInTable="columnQ1CorrectAnswer" msprop:Generator_ColumnPropNameInRow="Q1CorrectAnswer" msprop:Generator_ColumnPropNameInTable="Q1CorrectAnswerColumn" msprop:Generator_UserColumnName="Q1CorrectAnswer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Question2" msprop:Generator_ColumnVarNameInTable="columnQuestion2" msprop:Generator_ColumnPropNameInRow="Question2" msprop:Generator_ColumnPropNameInTable="Question2Column" msprop:Generator_UserColumnName="Question2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q2Answer1" msprop:Generator_ColumnVarNameInTable="columnQ2Answer1" msprop:Generator_ColumnPropNameInRow="Q2Answer1" msprop:Generator_ColumnPropNameInTable="Q2Answer1Column" msprop:Generator_UserColumnName="Q2Answer1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q2Answer2" msprop:Generator_ColumnVarNameInTable="columnQ2Answer2" msprop:Generator_ColumnPropNameInRow="Q2Answer2" msprop:Generator_ColumnPropNameInTable="Q2Answer2Column" msprop:Generator_UserColumnName="Q2Answer2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q2Answer3" msprop:Generator_ColumnVarNameInTable="columnQ2Answer3" msprop:Generator_ColumnPropNameInRow="Q2Answer3" msprop:Generator_ColumnPropNameInTable="Q2Answer3Column" msprop:Generator_UserColumnName="Q2Answer3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q2Answer4" msprop:Generator_ColumnVarNameInTable="columnQ2Answer4" msprop:Generator_ColumnPropNameInRow="Q2Answer4" msprop:Generator_ColumnPropNameInTable="Q2Answer4Column" msprop:Generator_UserColumnName="Q2Answer4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Q2CorrectAnswer" msprop:Generator_ColumnVarNameInTable="columnQ2CorrectAnswer" msprop:Generator_ColumnPropNameInRow="Q2CorrectAnswer" msprop:Generator_ColumnPropNameInTable="Q2CorrectAnswerColumn" msprop:Generator_UserColumnName="Q2CorrectAnswer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Hiragana" />
+      <xs:field xpath="mstns:HiraganaID" />
+    </xs:unique>
+    <xs:unique name="GetRow_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:GetRow" />
       <xs:field xpath="mstns:HiraganaID" />
     </xs:unique>
   </xs:element>
