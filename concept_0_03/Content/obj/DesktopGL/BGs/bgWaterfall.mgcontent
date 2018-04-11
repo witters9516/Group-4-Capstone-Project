@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgWaterfall.png</SourceFile>
-  <SourceTime>2018-03-25T12:54:00.3665359-04:00</SourceTime>
-  <DestFile>C:/Users/MattedCrow/Documents/GitHub/Forked-Group-4-Capstone-Project/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/BGs/bgWaterfall.xnb</DestFile>
-  <DestTime>2018-03-30T20:51:02.7795985-04:00</DestTime>
+  <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgWaterfall.png</SourceFile>
+  <SourceTime>2018-04-11T18:43:00.1014674-04:00</SourceTime>
+  <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/BGs/bgWaterfall.xnb</DestFile>
+  <DestTime>2018-04-11T18:46:04.7604372-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

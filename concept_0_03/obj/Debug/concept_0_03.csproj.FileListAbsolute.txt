@@ -787,3 +787,32 @@ C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Cap
 C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\NPCs\carl.xnb
 C:\Users\MattedCrow\Documents\GitHub\Forked-Group-4-Capstone-Project\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\standingGround.xnb
 >>>>>>> master
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Fonts\Japanese.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\0.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\1.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\2.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\3.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\4.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Health\5.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Enemies\wraith.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\WorldMap\levelEntrance.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\WorldMap\map.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgClouds.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgCloudsSmaller.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgMountains.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgMountainsSmaller.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgTrees.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\BGs\bgWaterfall.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox300x150.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox600x180.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox600x200.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox600x225.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox600x300.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox600x400.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\textboxes\textbox620x400.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player01_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player02_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player03_Fight.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\NPCs\carl.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\map wip.xnb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\standingGround.xnb
