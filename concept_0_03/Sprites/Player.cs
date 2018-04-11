@@ -6,10 +6,12 @@ namespace concept_0_03
 {
     public class Player : Sprite
     {
+        public bool playerCanMove;
+
         public Player(Texture2D texture)
             : base(texture)
         {
-
+            playerCanMove = true;
         }
 
         public override void Update(GameTime gameTime)
@@ -18,15 +20,31 @@ namespace concept_0_03
 
             var speed = 3f;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-                velocity.Y = -speed;
-            else if (Keyboard.GetState().IsKeyDown(Keys.S))
-                velocity.Y = speed;
+            if (playerCanMove)
+            {
+                #region Up & Down Movement -- CURRENTLY ON
+                
+                if (Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.Up))
+                    velocity.Y = -speed;
+                else if (Keyboard.GetState().IsKeyDown(Keys.S) || Keyboard.GetState().IsKeyDown(Keys.Down))
+                    velocity.Y = speed;
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-                velocity.X = -speed;
-            else if (Keyboard.GetState().IsKeyDown(Keys.D))
-                velocity.X = speed;
+                #endregion
+
+                #region Left & Right Movement -- CURRENTLY ON
+
+                if (Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.Left))
+                {
+                    velocity.X = -speed;
+                }
+                else if (Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.Right))
+                {
+                    velocity.X = speed;
+                }
+
+                #endregion
+            }
+            
 
             Position += velocity;
         }
