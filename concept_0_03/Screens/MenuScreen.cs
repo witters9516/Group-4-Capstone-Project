@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 
 namespace concept_0_03
 {
@@ -13,6 +14,7 @@ namespace concept_0_03
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
+        private Command m_command;
 
         private Text m_titleText;
         private List<Component> m_components;
@@ -24,9 +26,16 @@ namespace concept_0_03
 
         public bool IsPaused { get; private set; }
 
+        #region Touch Input Testing -- Nonfunctional
+
+        TouchCollection touchCollection;
+
+        #endregion
+
         public MenuScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
+            m_command = new Command(m_ScreenManager);
         }
 
         public void ChangeBetweenScreens()
@@ -39,14 +48,27 @@ namespace concept_0_03
 
         public void Init(ContentManager content)
         {
+            #region Touch Input Testing -- Nonfunctional
+            
+            TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
+
+            #endregion
+
             SpriteFont m_font = content.Load <SpriteFont>("Fonts/TitleFont");
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
             bgSong = content.Load<SoundEffect>("Music/Bit Quest");
-            bgMusic = bgSong.CreateInstance();
 
-            bgMusic.IsLooped = true;
-            bgMusic.Play();
+            Game1.currentInstance = bgSong.CreateInstance();
+            Game1.currentInstance.IsLooped = true;
+
+            Game1.m_audioState = Game1.AudioState.PLAYING;
+            Game1.currentInstance.Play();
+
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountainsSmaller"))
+            {
+                Position = new Vector2(-100, -2)
+            };
 
             #region Title Stuff
             string titleText = "Japakeys";
@@ -112,6 +134,8 @@ namespace concept_0_03
 
             m_components = new List<Component>()
             {
+                screenBackground,
+
                 newGameButton,
                 loadGameButton,
                 optionsGameButton,
@@ -120,32 +144,62 @@ namespace concept_0_03
         }
 
         #region Button Methods
+
         private void NewGameButton_Click(object sender, EventArgs e)
         {
             click.Play();
-            bgMusic.Stop();
-            m_ScreenManager.ChangeScreen(new CharacterSelectionScreen(m_ScreenManager));
+
+            m_command.NewGame(m_ScreenManager);
         }
 
         private void LoadGameButton_Click(object sender, EventArgs e)
         {
             click.Play();
 
-            Console.WriteLine("Load Game");
+            m_command.LoadGame(m_ScreenManager);
         }
 
         private void OptionsGameButton_Click(object sender, EventArgs e)
         {
-            bgMusic.Stop();
-            isMusicStopped = true;
+            click.Play();
 
-            m_ScreenManager.PushScreen(new OptionsScreen(m_ScreenManager));
+            m_command.OpenOptionsMenu(m_ScreenManager);
         }
 
         private void QuitGameButton_Click(object sender, EventArgs e)
         {
             m_exitGame = true;
         }
+        #endregion
+
+        #region Touch Methods
+
+        private void NewGameButton_Pressed()
+        {
+            click.Play();
+
+            m_command.NewGame(m_ScreenManager);
+        }
+
+        private void LoadGameButton_Pressed()
+        {
+            click.Play();
+
+            m_command.LoadGame(m_ScreenManager);
+        }
+
+        private void OptionsButton_Pressed()
+        {
+            click.Play();
+
+            m_command.OpenOptionsMenu(m_ScreenManager);
+        }
+
+        private void QuitButton_Pressed()
+        {
+            m_exitGame = true;
+        }
+
         #endregion
 
         public void Pause()
@@ -162,10 +216,10 @@ namespace concept_0_03
         {
             spriteBatch.Begin();
 
-            m_titleText.Draw(spriteBatch);
-
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
+
+            m_titleText.Draw(spriteBatch);
 
             spriteBatch.End();
         }
@@ -174,17 +228,56 @@ namespace concept_0_03
         {
             foreach (var component in m_components)
                 component.Update(gameTime);
-
-            if (isMusicStopped == true)
-            {
-                isMusicStopped = false;
-                bgMusic.Play();
-            }
         }
 
         public void HandleInput(GameTime gameTime)
         {
             var keyboard = Keyboard.GetState();
+
+            #region Touch Input Testing -- Nonfunctional
+
+            touchCollection = TouchPanel.GetState();
+
+            foreach (TouchLocation tl in touchCollection)
+            {
+                if (tl.State == TouchLocationState.Pressed &&
+                tl.Position.X > 305 &&
+                tl.Position.X < 495 &&
+                tl.Position.Y > 200 &&
+                tl.Position.Y < 249)
+                {
+                    NewGameButton_Pressed();
+                }
+
+                if (tl.State == TouchLocationState.Pressed &&
+                tl.Position.X > 305 &&
+                tl.Position.X < 495 &&
+                tl.Position.Y > 250 &&
+                tl.Position.Y < 299)
+                {
+                    LoadGameButton_Pressed();
+                }
+
+                if (tl.State == TouchLocationState.Pressed &&
+                tl.Position.X > 305 &&
+                tl.Position.X < 495 &&
+                tl.Position.Y > 300 &&
+                tl.Position.Y < 349)
+                {
+                    OptionsButton_Pressed();
+                }
+
+                if (tl.State == TouchLocationState.Pressed &&
+                tl.Position.X > 305 &&
+                tl.Position.X < 495 &&
+                tl.Position.Y > 350 &&
+                tl.Position.Y < 499)
+                {
+                    QuitButton_Pressed();
+                }
+            }
+
+            #endregion
 
             if (keyboard.IsKeyDown(Keys.Escape))
             {
