@@ -5,10 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
-<<<<<<< HEAD
 using System.IO;
-=======
->>>>>>> master
 
 namespace concept_0_03
 {
@@ -29,7 +26,6 @@ namespace concept_0_03
 
         
 
-<<<<<<< HEAD
         public FillQuestionsListClass()
         {
             #region Using database connection
@@ -73,24 +69,6 @@ namespace concept_0_03
         {
             return new LetterClass(array[1], array[2], array[3], array[4], array[5], array[6], array[7],
                 array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15]);
-=======
-        SqlConnection sqlConnection1 = new SqlConnection("Your Connection String");
-        SqlDataReader reader;
-        SqlCommand cmd = new SqlCommand();
-
-        public FillQuestionsListClass()
-        {
-            cmd.CommandText = "SELECT * FROM Customers";
-            cmd.CommandType = CommandType.Text;
-            cmd.Connection = sqlConnection1;
-
-            sqlConnection1.Open();
-
-            reader = cmd.ExecuteReader();
-            // Data is accessible through the DataReader object here.
-
-            sqlConnection1.Close();
->>>>>>> master
         }
     }
 }
