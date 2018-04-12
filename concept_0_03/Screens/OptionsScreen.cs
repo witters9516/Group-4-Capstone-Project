@@ -12,11 +12,14 @@ namespace concept_0_03
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
-        private Command m_command;
+        private bool isMusicOn = true;
 
         private List<Component> m_components;
         private SoundEffect click;
-        
+
+        private SoundEffect bgSong;
+        private SoundEffectInstance bgMusic;
+
         KeyboardState oldState;
 
         public bool IsPaused { get; private set; }
@@ -24,7 +27,6 @@ namespace concept_0_03
         public OptionsScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
-            m_command = new Command(m_ScreenManager);
         }
 
         public void ChangeBetweenScreens()
@@ -89,8 +91,7 @@ namespace concept_0_03
         private void ResumeButton_Click(object sender, EventArgs e)
         {
             click.Play();
-
-            m_command.CloseOptionsMenu(m_ScreenManager);
+            m_ScreenManager.PopScreen();
         }
 
         private void QuitButton_Click(object sender, EventArgs e)
@@ -102,14 +103,24 @@ namespace concept_0_03
         {
             click.Play();
 
-            m_command.ToggleAudio();
+            // Music Toggle
+            if (isMusicOn)
+            {
+                Console.WriteLine("Music Off");
+                isMusicOn = false;
+            }
+            else if (!isMusicOn)
+            {
+                Console.WriteLine("Music On");
+                isMusicOn = true;
+            }
+            Console.WriteLine("Music Toggle");
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
         {
             click.Play();
-
-            m_command.SaveGame(m_ScreenManager);
+            Console.WriteLine("Save Game");
         }
 
         public void Pause()
