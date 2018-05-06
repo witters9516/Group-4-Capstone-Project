@@ -43,10 +43,12 @@ namespace concept_0_03
         Texture2D image_NotUnlocked;
         Texture2D image_SilverKey;
         Texture2D image_GoldenKey;
+        Texture2D image_Background;
         string path;
         string path2;
         string path3;
         string path4;
+        string path5;
         #endregion
 
         //Constructor
@@ -77,11 +79,14 @@ namespace concept_0_03
             path2 = "KeyGallery/NotObtainedKey";
             path3 = "KeyGallery/SilverKey";
             path4 = "KeyGallery/GoldKey";
+            path5 = "BGs/bgMountains";
+
             //Set images with paths
             image_KeyGallery = content.Load<Texture2D>(path);
             image_NotUnlocked = content.Load<Texture2D>(path2);
             image_SilverKey = content.Load<Texture2D>(path3);
             image_GoldenKey = content.Load<Texture2D>(path4);
+            image_Background = content.Load<Texture2D>(path5);
 
             //Set button UI elements.
             buttonTexture = content.Load<Texture2D>("Menu/Blue/blue_button04");
@@ -107,6 +112,9 @@ namespace concept_0_03
         {
             spriteBatch.Begin();    //Begin SpriteBatch
 
+            //Background
+            spriteBatch.Draw(image_Background, new Rectangle(0, 0, 800, 600), Color.White);
+
             //1.Fill Gallery With colored keys based on switchListButton Text.
             if (switchListButton.Text == "Golden Keys")
                 FillGalleryWithPictures(spriteBatch, WorldMapScreen.keyInventory.GetSilverKeyList());
@@ -115,6 +123,7 @@ namespace concept_0_03
 
             //2. Fill in remaining blank spaces.
             FillRemainingEmptyPictures(spriteBatch);
+
 
             //3. Load up other UI objects.
             spriteBatch.Draw(image_KeyGallery, new Rectangle(0, -2, 802, 602), Color.White);
