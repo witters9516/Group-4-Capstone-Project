@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/User/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Hiragana/ra.png</SourceFile>
-  <SourceTime>2018-03-09T22:57:56-05:00</SourceTime>
-  <DestFile>C:/Users/User/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/Hiragana/ra.xnb</DestFile>
-  <DestTime>2018-03-11T17:46:59.8708553-04:00</DestTime>
+  <SourceFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/Hiragana/ra.png</SourceFile>
+  <SourceTime>2018-05-06T00:30:41.4999567-04:00</SourceTime>
+  <DestFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/bin/DesktopGL/Hiragana/ra.xnb</DestFile>
+  <DestTime>2018-05-06T16:13:18.4368977-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
