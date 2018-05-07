@@ -122,9 +122,11 @@ namespace concept_0_03
         {
             //Set Click Sound Effect
             click = content.Load<SoundEffect>("SFX/Select_Click");
+
             //Set Content for Buttons and Font.
             buttonTexture = content.Load<Texture2D>("Menu/Blue/blue_button04");
             buttonFont = content.Load<SpriteFont>("Fonts/Font");
+
             //Create KeyGalleryButton and click event.
             KeyGalleryButton = CreateButton(new Vector2(0, 550), "Key Gallery");
             KeyGalleryButton.Click += KeyGalleryButton_Click;

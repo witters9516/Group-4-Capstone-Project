@@ -114,6 +114,9 @@ namespace concept_0_03
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
+            if (Game1.m_audioState == Game1.AudioState.PLAYING)
+                Game1.currentInstance.Stop();
+
             m_ScreenManager.ChangeScreen(new MenuScreen(m_ScreenManager));
         }
 
