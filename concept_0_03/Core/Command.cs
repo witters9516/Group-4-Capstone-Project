@@ -539,7 +539,7 @@ namespace concept_0_03
                         Game1.isFightOn = true;
                         didFightStart = true;
 
-                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "2-12"));
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "2-10"));
                     }
                     else
                     {

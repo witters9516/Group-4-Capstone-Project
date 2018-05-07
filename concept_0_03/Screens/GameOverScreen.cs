@@ -52,6 +52,29 @@ namespace concept_0_03
             // Background
             var background = new Sprite(content.Load<Texture2D>("BGs/bgGameOver"));
 
+            #region Music
+
+            bgSong = content.Load<SoundEffect>("Music/SweetDreamsNonLoop");
+
+            switch (Game1.m_audioState)
+            {
+                case Game1.AudioState.OFF:
+                    Game1.currentInstance = bgSong.CreateInstance();
+                    
+                    break;
+                case Game1.AudioState.PAUSED:
+                    Game1.currentInstance = bgSong.CreateInstance();
+                    
+                    break;
+                case Game1.AudioState.PLAYING:
+                    Game1.currentInstance = bgSong.CreateInstance();
+                    
+                    Game1.currentInstance.Play();
+                    break;
+            }
+
+            #endregion
+
             #region Button Variables
 
             var buttonTexture = content.Load<Texture2D>("Menu/Grey/grey_button04");
