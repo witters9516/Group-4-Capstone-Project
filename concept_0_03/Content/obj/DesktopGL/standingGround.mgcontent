@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/standingGround.png</SourceFile>
-  <SourceTime>2018-04-11T18:43:00.6650307-04:00</SourceTime>
+  <SourceTime>2018-05-06T18:05:57.9311394-04:00</SourceTime>
   <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/standingGround.xnb</DestFile>
-  <DestTime>2018-04-11T18:46:05.3473293-04:00</DestTime>
+  <DestTime>2018-05-06T18:34:55.5457446-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

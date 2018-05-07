@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/BGs/bgTrees.png</SourceFile>
-  <SourceTime>2018-04-11T18:43:00.0964541-04:00</SourceTime>
+  <SourceTime>2018-05-06T18:05:58.1099452-04:00</SourceTime>
   <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/BGs/bgTrees.xnb</DestFile>
-  <DestTime>2018-04-11T18:46:04.4280388-04:00</DestTime>
+  <DestTime>2018-05-06T18:34:57.847366-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

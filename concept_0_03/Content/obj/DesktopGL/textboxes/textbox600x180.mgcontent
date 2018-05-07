@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/textboxes/textbox600x180.png</SourceFile>
-  <SourceTime>2018-04-11T18:43:00.6680404-04:00</SourceTime>
+  <SourceTime>2018-05-06T18:06:11.3621764-04:00</SourceTime>
   <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/textboxes/textbox600x180.xnb</DestFile>
-  <DestTime>2018-04-11T18:46:04.986381-04:00</DestTime>
+  <DestTime>2018-05-06T18:34:55.0258611-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
