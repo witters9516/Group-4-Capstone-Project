@@ -61,23 +61,20 @@ namespace concept_0_03
 
         public void ToggleAudio()
         {
-            switch (Game1.m_audioState)
+            switch (Game1.musicVolume)
             {
-                case Game1.AudioState.OFF:
-                    Game1.currentInstance.Stop();
-
-                    Game1.m_audioState = Game1.AudioState.PLAYING;
+                case 1.0f:
+                    Game1.musicVolume = 0.5f;
                     break;
-                case Game1.AudioState.PAUSED:
-                    Game1.currentInstance.Stop();
 
-                    Game1.m_audioState = Game1.AudioState.PLAYING;
+                case 0.5f:
+                    Game1.musicVolume = 0.0f;
                     break;
-                case Game1.AudioState.PLAYING:
-                    Game1.currentInstance.Play();
 
-                    Game1.m_audioState = Game1.AudioState.PAUSED;
+                case 0.0f:
+                    Game1.musicVolume = 1.0f;
                     break;
+
             }
         }
 
@@ -675,6 +672,7 @@ namespace concept_0_03
         {
             Game1.currentInstance = bgm.CreateInstance();
             Game1.currentInstance.IsLooped = true;
+            Game1.currentInstance.Volume = Game1.musicVolume;
 
             if (Game1.m_audioState == Game1.AudioState.PLAYING)
                 Game1.currentInstance.Play();

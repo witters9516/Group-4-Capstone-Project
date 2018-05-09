@@ -143,17 +143,21 @@ namespace concept_0_03
                 case Game1.AudioState.OFF:
                     Game1.currentInstance = bgSong.CreateInstance();
 
+                    Game1.currentInstance.Volume = Game1.musicVolume;
                     Game1.currentInstance.IsLooped = true;
                     break;
                 case Game1.AudioState.PAUSED:
                     Game1.currentInstance = bgSong.CreateInstance();
 
                     Game1.currentInstance.IsLooped = true;
+                    Game1.currentInstance.Volume = Game1.musicVolume;
                     break;
                 case Game1.AudioState.PLAYING:
                     Game1.currentInstance = bgSong.CreateInstance();
 
                     Game1.currentInstance.IsLooped = true;
+
+                    Game1.currentInstance.Volume = Game1.musicVolume;
                     Game1.currentInstance.Play();
                     break;
             }

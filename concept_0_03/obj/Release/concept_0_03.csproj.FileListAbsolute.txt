@@ -197,3 +197,4 @@ C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\bin\D
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Release\concept_0_03.csproj.CoreCompileInputs.cache
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Release\concept_0_03.exe
 C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Release\concept_0_03.pdb
+C:\Users\MattedCrow\Documents\GitHub\Group-4-Capstone-Project\concept_0_03\obj\Release\concept_0_03.csprojResolveAssemblyReference.cache

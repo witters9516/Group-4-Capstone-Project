@@ -28,11 +28,12 @@ namespace concept_0_03
         #region Traveling Song Variables
 
         public static SoundEffect worldMapBGM;
+        public static float musicVolume = 1.0f;
+        public static SoundEffect currentSong;
+        public static SoundEffectInstance currentInstance;
 
         #endregion
 
-        public static SoundEffect currentSong;
-        public static SoundEffectInstance currentInstance;
         public static bool isFightOn = false;
 
         #endregion

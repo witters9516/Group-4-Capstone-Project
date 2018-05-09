@@ -16,6 +16,10 @@ namespace concept_0_03
 
         private List<Component> m_components;
         private SoundEffect click;
+
+        // UI Variables
+        public Button musicButton;
+        public float currentVolume;
         
         KeyboardState oldState;
 
@@ -59,7 +63,7 @@ namespace concept_0_03
             saveButton.Click += SaveButton_Click;
             #endregion
             #region Music Button
-            var musicButton = new Button(content.Load<Texture2D>("Menu/Grey/grey_button00"), content.Load<SpriteFont>("Fonts/Font"))
+            musicButton = new Button(content.Load<Texture2D>("Menu/Grey/grey_button00"), content.Load<SpriteFont>("Fonts/Font"))
             {
                 Position = new Vector2(300, 300),
                 Text = "Music",
@@ -77,8 +81,15 @@ namespace concept_0_03
             quitButton.Click += QuitButton_Click;
             #endregion
 
+            var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgWaterfallOrange"))
+            {
+                Position = new Vector2(-100, -2)
+            };
+
             m_components = new List<Component>()
             {
+                screenBackground,
+
                 resumeButton,
                 saveButton,
                 musicButton,
@@ -103,6 +114,7 @@ namespace concept_0_03
             click.Play();
 
             m_command.ToggleAudio();
+            Game1.currentInstance.Volume = Game1.musicVolume;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -126,6 +138,15 @@ namespace concept_0_03
         {
             foreach (var component in m_components)
                 component.Update(gameTime);
+
+            GetMusicVolume();
+        }
+
+        public void GetMusicVolume()
+        {
+            currentVolume = Game1.musicVolume * 100;
+
+            musicButton.Text = "Music: " + currentVolume.ToString() + "%";
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
