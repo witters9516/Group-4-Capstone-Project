@@ -62,9 +62,9 @@
     <Compile Include="Alphabet\JapChar.cs" />
     <Compile Include="Alphabet\Question.cs" />
     <Compile Include="Core\Command.cs" />
-    <Compile Include="KeyClass.cs" />
-    <Compile Include="KeyGalleryMain.cs" />
-    <Compile Include="KeyInventory.cs" />
+    <Compile Include="Key Gallery\KeyClass.cs" />
+    <Compile Include="Key Gallery\KeyGalleryMain.cs" />
+    <Compile Include="Key Gallery\KeyInventory.cs" />
     <Compile Include="Screens\GalleryScreen.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -92,7 +92,7 @@
     <Compile Include="Screens\WorldMapScreen.cs" />
     <Compile Include="Stage\StageBuild.cs" />
     <Compile Include="Stage\StageData.cs" />
-    <Compile Include="WorldKeyDisplay.cs" />
+    <Compile Include="Screens\WorldKeyDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
@@ -172,9 +172,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="a\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

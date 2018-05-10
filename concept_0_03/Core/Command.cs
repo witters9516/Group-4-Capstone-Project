@@ -570,6 +570,258 @@ namespace concept_0_03
                     }
 
                     return levelsUnlocked;
+                case 23:
+                    if (levelsUnlocked > 22)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-1"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 23)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 24:
+                    if (levelsUnlocked > 23)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-2"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 24)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 25:
+                    if (levelsUnlocked > 24)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-3"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 25)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 26:
+                    if (levelsUnlocked > 25)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-4"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 26)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 27:
+                    if (levelsUnlocked > 26)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-5"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 27)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 28:
+                    if (levelsUnlocked > 27)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-6"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 28)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 29:
+                    if (levelsUnlocked > 28)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-7"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 29)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 30:
+                    if (levelsUnlocked > 29)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-8"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 30)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 31:
+                    if (levelsUnlocked > 30)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-9"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 31)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 32:
+                    if (levelsUnlocked > 31)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-10"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 32)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 33:
+                    if (levelsUnlocked > 32)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-11"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 33)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
+                case 34:
+                    if (levelsUnlocked > 33)
+                    {
+                        MusicOff();
+
+                        Game1.isFightOn = true;
+                        didFightStart = true;
+
+                        m_screenManager.PushScreen(new FightScreen(m_screenManager, "3-12"));
+                    }
+                    else
+                    {
+                        // display cannot enter level message???
+                    }
+
+                    if (levelsUnlocked == 34)
+                    {
+                        levelsUnlocked += 1;
+                    }
+
+                    return levelsUnlocked;
             }
 
 

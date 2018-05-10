@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Menu/Red/red_boxCross.png</SourceFile>
-  <SourceTime>2018-05-06T18:05:59.6516898-04:00</SourceTime>
-  <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/Menu/Red/red_boxCross.xnb</DestFile>
-  <DestTime>2018-05-06T18:34:50.7429683-04:00</DestTime>
+  <SourceFile>C:/Users/Mio/Downloads/Group-4-Capstone-Project-master (1)/Group-4-Capstone-Project-master/concept_0_03/Content/Menu/Red/red_boxCross.png</SourceFile>
+  <SourceTime>2018-05-09T21:31:13.4228061-04:00</SourceTime>
+  <DestFile>C:/Users/Mio/Downloads/Group-4-Capstone-Project-master (1)/Group-4-Capstone-Project-master/concept_0_03/Content/bin/DesktopGL/Menu/Red/red_boxCross.xnb</DestFile>
+  <DestTime>2018-05-09T21:34:21.9021133-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
