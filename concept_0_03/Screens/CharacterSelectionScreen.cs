@@ -129,14 +129,6 @@ namespace concept_0_03
 
             #region Character Textures
 
-            player01 = content.Load<Texture2D>("Player/player01_Front");
-            player02 = content.Load<Texture2D>("Player/player02_Front");
-            player03 = content.Load<Texture2D>("Player/player03_Front");
-
-            player01_Fight = content.Load<Texture2D>("Player/player01_Fight");
-            player02_Fight = content.Load<Texture2D>("Player/player02_Fight");
-            player03_Fight = content.Load<Texture2D>("Player/player03_Fight");
-
             whichCharacter = "Player01";
             Game1.activePlayerTexture = player01;
             Game1.activePlayer_FightTexture = player01_Fight;

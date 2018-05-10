@@ -17,6 +17,18 @@ namespace concept_0_03
         public static Texture2D activePlayerTexture;
         public static Texture2D activePlayer_FightTexture;
 
+        #region Player Textures
+        // PLAYER OPTION TEXTURES, FOR LOADING
+        public static Texture2D charaOne_World;
+        public static Texture2D charaOne_Fight;
+
+        public static Texture2D charaTwo_World;
+        public static Texture2D charaTwo_Fight;
+
+        public static Texture2D charaThree_World;
+        public static Texture2D charaThree_Fight;
+        #endregion
+
         // KEEPS CURRENT COMPANION
         public static Texture2D activeCompanionTexture;
         public static Texture2D activeCompanion_FightTexture;
@@ -88,6 +100,15 @@ namespace concept_0_03
             activeCompanionTexture = Content.Load<Texture2D>("NPCs/carl");
             activeCompanion_FightTexture = Content.Load<Texture2D>("NPCs/Carl_Fight");
             worldMapBGM = Content.Load<SoundEffect>("Music/WorldMapLoop");
+
+            // Player Textures
+            charaOne_World = Content.Load<Texture2D>("Player/player01_Front");
+            charaTwo_World = Content.Load<Texture2D>("Player/player02_Front");
+            charaThree_World = Content.Load<Texture2D>("Player/player03_Front");
+
+            charaOne_Fight = Content.Load<Texture2D>("Player/player01_Fight");
+            charaTwo_Fight = Content.Load<Texture2D>("Player/player02_Fight");
+            charaThree_Fight = Content.Load<Texture2D>("Player/player03_Fight");
 
             m_screenManager = new GameScreenManager(spriteBatch, Content);
             m_screenManager.OnGameExit += Exit;

@@ -617,8 +617,8 @@ namespace concept_0_03
 
         public string ChoosePlayerOne()
         {
-            Game1.activePlayerTexture = CharacterSelectionScreen.player01;
-            Game1.activePlayer_FightTexture = CharacterSelectionScreen.player01_Fight;
+            Game1.activePlayerTexture = Game1.charaOne_World;
+            Game1.activePlayer_FightTexture = Game1.charaOne_Fight;
 
             string whichCharacter = "Player01";
             return whichCharacter;
@@ -629,8 +629,8 @@ namespace concept_0_03
 
         public string ChoosePlayerTwo()
         {
-            Game1.activePlayerTexture = CharacterSelectionScreen.player02;
-            Game1.activePlayer_FightTexture = CharacterSelectionScreen.player02_Fight;
+            Game1.activePlayerTexture = Game1.charaTwo_World;
+            Game1.activePlayer_FightTexture = Game1.charaTwo_Fight;
 
             string whichCharacter = "Player02";
             return whichCharacter;
@@ -641,8 +641,8 @@ namespace concept_0_03
 
         public string ChoosePlayerThree()
         {
-            Game1.activePlayerTexture = CharacterSelectionScreen.player03;
-            Game1.activePlayer_FightTexture = CharacterSelectionScreen.player03_Fight;
+            Game1.activePlayerTexture = Game1.charaThree_World;
+            Game1.activePlayer_FightTexture = Game1.charaThree_Fight;
 
             string whichCharacter = "Player03";
             return whichCharacter;
