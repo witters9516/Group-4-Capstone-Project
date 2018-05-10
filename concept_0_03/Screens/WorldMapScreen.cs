@@ -94,8 +94,6 @@ namespace concept_0_03
         #endregion
         #endregion
 
-        public int levelsUnlocked = 1;
-
         #endregion
 
         public WorldMapScreen(IGameScreenManager gameScreenManager)
@@ -476,7 +474,7 @@ namespace concept_0_03
 
             #region Move Companion to Current Locked Level
 
-            switch (levelsUnlocked)
+            switch (Game1.levelsUnlocked)
             {
                 case 0:
                     break;
@@ -631,7 +629,7 @@ namespace concept_0_03
 
             if (keyboard.IsKeyDown(Keys.Enter))
             {
-                levelsUnlocked = m_command.EnterLevel(currentLevel, m_ScreenManager, levelsUnlocked, bgSong);
+                Game1.levelsUnlocked = m_command.EnterLevel(currentLevel, m_ScreenManager, Game1.levelsUnlocked, bgSong);
             }
 
             #endregion
@@ -1070,7 +1068,7 @@ namespace concept_0_03
                     #endregion
 
                     #region Hiding Companion
-                    if (levelsUnlocked > 11)
+                    if (Game1.levelsUnlocked > 11)
                     {
                         Companion.Colour = Color.Transparent;
                     }
@@ -1117,7 +1115,7 @@ namespace concept_0_03
                     }
 
                     #region Hiding Companion
-                    if (levelsUnlocked < 12 || levelsUnlocked > 22)
+                    if (Game1.levelsUnlocked < 12 || Game1.levelsUnlocked > 22)
                     {
                         Companion.Colour = Color.Transparent;
                     }
@@ -1161,7 +1159,7 @@ namespace concept_0_03
                     #endregion
 
                     #region Hiding Companion
-                    if (levelsUnlocked < 23)
+                    if (Game1.levelsUnlocked < 23)
                     {
                         Companion.Colour = Color.Transparent;
                     }

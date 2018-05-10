@@ -25,6 +25,8 @@ namespace concept_0_03
         public static Texture2D activeEnemyTexture;
         #endregion
 
+        public static int levelsUnlocked = 1;
+
         #region Traveling Song Variables
 
         public static SoundEffect worldMapBGM;
