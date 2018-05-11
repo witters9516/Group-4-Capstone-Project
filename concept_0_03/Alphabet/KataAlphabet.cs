@@ -8,6 +8,7 @@ namespace concept_0_03.Alphabet
 {
     class KataAlphabet : JapChar
     {
+        //Variable Arrays
         private string[] vowelSets = { "a", "i", "u", "e", "o" };
         private string[] constSets =
         {
@@ -15,6 +16,7 @@ namespace concept_0_03.Alphabet
             "ky", "gy", "sh", "j", "ch", "ny", "hy", "by", "py", "my", "ry"
         };
 
+        //Constructor
         public KataAlphabet()
         {
             CharList.Add(new JapChar("a", "ア", "a", "vowel"));
@@ -104,9 +106,5 @@ namespace concept_0_03.Alphabet
             CharList.Add(new JapChar("ro", "ロ", "o", "r"));
 
         }
-
-        //public int VowelSets(string x) { int e = 0; for (int i = 0; i < vowelSets.Length; i++) { if (vowelSets[i] == x) { e = i; } } return e; }
-        //public int ConstSets(string x) { int e = 0; for (int i = 0; i < constSets.Length; i++) { if (constSets[i] == x) { e = i; } } return e; }
     }
-
 }

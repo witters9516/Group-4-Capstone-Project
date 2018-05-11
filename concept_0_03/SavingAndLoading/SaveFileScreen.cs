@@ -191,13 +191,19 @@ namespace concept_0_03
 
             if (Game1.isOnWorldMap == true)
                 SaveInfo(1);    //Save Information into file 1.
+
+            m_ScreenManager.PopScreen();    //pop the current screen.
         }
 
         private void SaveFile2_Click(object sender, EventArgs e)
         {
             click.Play();   //play Audio Click Effect
-            if(Game1.isOnWorldMap == true)
+
+            if (Game1.isOnWorldMap == true)
                 SaveInfo(2);    //Save Information into file 2.
+
+            m_ScreenManager.PopScreen();    //pop the current screen.
+
         }
 
         private void SaveFile3_Click(object sender, EventArgs e)
@@ -206,6 +212,8 @@ namespace concept_0_03
 
             if (Game1.isOnWorldMap == true)
                 SaveInfo(3);    //Save Information into file 3.
+
+            m_ScreenManager.PopScreen();    //pop the current screen.
         }
         private void BackButton_Click(object sender, EventArgs e)
         {

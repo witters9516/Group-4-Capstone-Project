@@ -8,6 +8,7 @@ namespace concept_0_03
 {
     class Question
     {
+        //Variables
         private string question;
         private string questionImageName;
         private string answer1;
@@ -15,12 +16,13 @@ namespace concept_0_03
         private string answer3;
         private string answer4;
         private string correctAnswer;
-
+        //Lists
         private List<Alphabet.JapChar> questionSet = new List<Alphabet.JapChar> { };
         private List<Alphabet.JapChar> finalSet = new List<Alphabet.JapChar> { };
-
+        //Random Number Variable
         private int rng;
 
+        //Constructor
         public Question()
         {
             question = "";
@@ -32,6 +34,7 @@ namespace concept_0_03
             correctAnswer = "";
         }
 
+        //Overloaded Constructor
         public Question(List<Alphabet.JapChar> currentSet)
         {
             List<int> rngList = new List<int> { };
@@ -90,6 +93,7 @@ namespace concept_0_03
 
         }
 
+        //This selects a number at random and returns it as an int.
         private int Rng(int count)
         {
             Random rand = new Random(Guid.NewGuid().GetHashCode());
@@ -97,19 +101,21 @@ namespace concept_0_03
             return r;
         }
 
+        //This checks the question and returns true for a correct 
+        //answer and false is an incorrect answer.
         public bool CheckAns(string result)
         {
             if (result == correctAnswer) { return true; }
             else { return false; }
         }
 
+        //Returns QuestionSet
         private List<Alphabet.JapChar> CreateQuestionSet(List<Alphabet.JapChar> currentSet)
         {
-            
-
             return questionSet;
         }
 
+        //Public Getters And Setters
         public string Quest { get { return question; } set { question = value; } }
         public string QuestImgName { get { return questionImageName; } set { questionImageName = value; } }
         public string Ans1 { get { return answer1; } set { answer1 = value; } }
