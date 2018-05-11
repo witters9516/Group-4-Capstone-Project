@@ -67,13 +67,15 @@ namespace concept_0_03
 
             //Title Variables
             #region Title Stuff
-            string titleText = "Japakeys";
-            var x = (800 / 2) - (m_font.MeasureString(titleText).X / 2);
-            var y = 100;
-            Vector2 m_textPosition = new Vector2(x, y);
-            Color m_color = Color.Black;
+            var x = (800 / 2) - (600 / 2);
+            var y = 0;
+            Vector2 m_titlePosition = new Vector2(x, y);
+            
 
-            m_titleText = new Text(titleText, m_font, m_textPosition, m_color);
+            var japakeysLogo = new Sprite(content.Load<Texture2D>("Menu/japakeysLogo"))
+            {
+                Position = m_titlePosition
+            };
             #endregion
 
             #region Button Variables
@@ -137,6 +139,8 @@ namespace concept_0_03
                 loadGameButton,
                 optionsGameButton,
                 quitGameButton,
+
+                japakeysLogo,
             };
         }
 
@@ -216,8 +220,6 @@ namespace concept_0_03
             //Draw all components to screen
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
-
-            m_titleText.Draw(spriteBatch);
 
             spriteBatch.End();    //End SpriteBatch
         }

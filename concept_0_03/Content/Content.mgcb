@@ -2021,6 +2021,18 @@
 /processorParam:TextureFormat=Color
 /build:LoadFile/LoadFile3.png
 
+#begin LoadFile/LoadFileTitle.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:LoadFile/LoadFileTitle.png
+
 #begin LoadFile/SaveFileTitle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -2033,7 +2045,7 @@
 /processorParam:TextureFormat=Color
 /build:LoadFile/SaveFileTitle.png
 
-#begin LoadFile/LoadFileTitle.png
+#begin Menu/japakeysLogo.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -2043,5 +2055,5 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:LoadFile/LoadFileTitle.png
+/build:Menu/japakeysLogo.png
 

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/Music/LeviathanBattleLoop.mp3</SourceFile>
-  <SourceTime>2018-05-09T22:21:39.7203281-04:00</SourceTime>
-  <DestFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/bin/DesktopGL/Music/LeviathanBattleLoop.xnb</DestFile>
-  <DestTime>2018-05-10T01:14:31.8145779-04:00</DestTime>
+  <SourceFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/Music/LeviathanBattleLoop.mp3</SourceFile>
+  <SourceTime>2018-05-11T19:40:53.2596588-04:00</SourceTime>
+  <DestFile>C:/Users/MattedCrow/Documents/GitHub/Group-4-Capstone-Project/concept_0_03/Content/bin/DesktopGL/Music/LeviathanBattleLoop.xnb</DestFile>
+  <DestTime>2018-05-11T19:51:20.0286232-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
