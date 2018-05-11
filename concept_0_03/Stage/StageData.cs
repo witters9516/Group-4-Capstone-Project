@@ -8,6 +8,8 @@ namespace concept_0_03.Stage
 {
     class StageData : StageBuild
     {
+        //Field
+        //List that contains all level information.
         private List<StageBuild> stageList = new List<StageBuild>
         {
             #region World 1 (Hiragana)
@@ -395,6 +397,7 @@ namespace concept_0_03.Stage
 
         };
 
+        //Constructor
         public StageData()
         {
             this.ID = "";

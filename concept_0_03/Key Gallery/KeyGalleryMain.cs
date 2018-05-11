@@ -110,6 +110,11 @@ namespace concept_0_03
         {
             var keyboard = Keyboard.GetState();
 
+            if (keyboard.IsKeyDown(Keys.Escape))
+            {
+                m_exitGame = true;
+            }
+
             //if (keyboard.IsKeyDown(Keys.Back) == true)
             //    BackButton_Pressed();
         }

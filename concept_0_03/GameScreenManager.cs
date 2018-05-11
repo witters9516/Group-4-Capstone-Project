@@ -8,19 +8,21 @@ namespace concept_0_03
 {
     class GameScreenManager : IGameScreenManager
     {
+        //Fields
         private Action m_onGameExit;
-
+        //Readonly Variables
         private readonly SpriteBatch m_spriteBatch;
         private readonly ContentManager m_contentManager;
-        
         private readonly List<IGameScreen> m_gameScreens = new List<IGameScreen>();
 
+        //Overloaded Constructor
         public GameScreenManager(SpriteBatch spriteBatch, ContentManager contentManager)
         {
             m_spriteBatch = spriteBatch;
             m_contentManager = contentManager;
         }
 
+        //Removes screens from list and then adds a new screen.
         public void ChangeScreen(IGameScreen screen)
         {
             RemoveAllScreens();
@@ -30,6 +32,7 @@ namespace concept_0_03
             screen.Init(m_contentManager);
         }
 
+        //Adds a new Screen to the list.
         public void PushScreen(IGameScreen screen)
         {
             if(!IsScreenListEmpty)
@@ -42,6 +45,7 @@ namespace concept_0_03
             screen.Init(m_contentManager);
         }
 
+        //Removes the current Screen from the list.
         public void PopScreen()
         {
             if(!IsScreenListEmpty)
@@ -85,6 +89,7 @@ namespace concept_0_03
         }
         #endregion
 
+        //Handles Keyboard Input
         public void HandleInput(GameTime gameTime)
         {
             if (!IsScreenListEmpty)
@@ -98,6 +103,7 @@ namespace concept_0_03
             }
         }
 
+        //Handles updating UI elements
         public void Update(GameTime gameTime)
         {
             if (!IsScreenListEmpty)
@@ -111,6 +117,7 @@ namespace concept_0_03
             }
         }
 
+        //Draws UI Elements
         public void Draw(GameTime gameTime)
         {
             if (!IsScreenListEmpty)
@@ -124,6 +131,7 @@ namespace concept_0_03
             }
         }
 
+        //Changes Between Screens
         public void ChangeBetweenScreens()
         {
             if (!IsScreenListEmpty)
@@ -137,17 +145,20 @@ namespace concept_0_03
             }
         }
 
+        //Exit Function
         public void Exit()
         {
             m_onGameExit?.Invoke();
         }
 
+        //Action Event
         public event Action OnGameExit
         {
             add { m_onGameExit += value; }
             remove { m_onGameExit -= value; }
         }
 
+        //Dispose
         public void Dispose()
         {
             RemoveAllScreens();

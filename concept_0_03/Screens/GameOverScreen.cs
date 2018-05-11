@@ -13,19 +13,15 @@ namespace concept_0_03
 {
     class GameOverScreen : IGameScreen
     {
+        //Screen Main Variables
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
-
         private List<Component> m_components;
-        private SoundEffect click;
-
         private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
-        private bool isMusicStopped = false;
         private Text gameOver;
-
         public bool IsPaused { get; private set; }
 
+        //Constructor
         public GameOverScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
@@ -42,9 +38,10 @@ namespace concept_0_03
         public void Init(ContentManager content)
         {
             #region Game Over Text Rendering
-            Vector2 m_Position = new Vector2(350, 150);
-            Color m_Color = Color.Black;
+            Vector2 m_Position = new Vector2(350, 150); //Set Position
+            Color m_Color = Color.Black;                //Set Color
 
+            //Set gameOver Variables
             gameOver = new Text("Game Over", content.Load<SpriteFont>("Fonts/TitleFont"), m_Position, m_Color);
             gameOver.CenterHorizontal(800, 150);
             #endregion
@@ -53,9 +50,10 @@ namespace concept_0_03
             var background = new Sprite(content.Load<Texture2D>("BGs/bgGameOver"));
 
             #region Music
-
+            //Set Battle Music
             bgSong = content.Load<SoundEffect>("Music/SweetDreamsNonLoop");
 
+            //Configure m_audioState
             switch (Game1.m_audioState)
             {
                 case Game1.AudioState.OFF:
@@ -75,17 +73,15 @@ namespace concept_0_03
                     Game1.currentInstance.Play();
                     break;
             }
-
             #endregion
-
             #region Button Variables
-
+            //Set Button Variables
             var buttonTexture = content.Load<Texture2D>("Menu/Grey/grey_button04");
             var buttonFont = content.Load<SpriteFont>("Fonts/Font");
 
             #endregion
             #region Menu Button
-
+            //Create Menu Button and click events
             var menuButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(305, 250),
@@ -96,7 +92,7 @@ namespace concept_0_03
 
             #endregion
             #region Quit Button
-
+            //Create Quit Button and click events
             var quitGameButton = new Button(buttonTexture, buttonFont)
             {
                 Position = new Vector2(305, 300),
@@ -106,7 +102,7 @@ namespace concept_0_03
             quitGameButton.Click += QuitGameButton_Click;
 
             #endregion
-
+            //List Of components for drawing
             m_components = new List<Component>()
             {
                 background,
@@ -117,9 +113,13 @@ namespace concept_0_03
 
         private void MenuButton_Click(object sender, EventArgs e)
         {
+            //Turn Music Off
             if (Game1.m_audioState == Game1.AudioState.PLAYING)
                 Game1.currentInstance.Stop();
-
+            //Set game variables back to default.
+            Game1.isOnWorldMap = false; //Prevents saving in the options screen.
+            Game1.levelsUnlocked = 0;   //Sets the starting level back to zero.
+            //Change Screen Back to Main Menu
             m_ScreenManager.ChangeScreen(new MenuScreen(m_ScreenManager));
         }
 
@@ -146,14 +146,16 @@ namespace concept_0_03
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin();    //Begin spriteBatch
 
+            //Draw gameOver
             gameOver.Draw(spriteBatch);
 
+            //Draw components to screen.
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
 
-            spriteBatch.End();
+            spriteBatch.End();    //End spriteBatch
         }
 
         public void HandleInput(GameTime gameTime)

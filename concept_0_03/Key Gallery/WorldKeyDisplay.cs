@@ -138,7 +138,12 @@ namespace concept_0_03
         public void HandleInput(GameTime gameTime)
         {
             var keyboard = Keyboard.GetState();
-            
+
+            if (keyboard.IsKeyDown(Keys.Escape))
+            {
+                m_exitGame = true;
+            }
+
             //KeyBoard input statments.
             if (keyboard.IsKeyDown(Keys.Back) == true)
                 Back_Pressed();

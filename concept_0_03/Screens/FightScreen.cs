@@ -11,53 +11,48 @@ namespace concept_0_03
 {
     class FightScreen : IGameScreen
     {
+        //Screen Variables
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
-
-        private bool isMusicOn;
-        private bool wasOptionsOpened;
-
         private List<Component> m_components;
         private SoundEffect click;
-
         public bool IsPaused { get; private set; }
 
         #region BGM Variables
-
+        //Battle Game Music Variables
         private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
+        //private SoundEffectInstance bgMusic;
         private Random whichSongRand = new Random(Guid.NewGuid().GetHashCode());
-
         #endregion
 
         private KeyboardState oldState;
 
         #region Timer for Key Input Delay
-
+        //Answer Variables
         private Timer canAnswerTimer = new Timer();
         private bool canAnswer = false;
 
         #endregion
 
         #region End Fight Variables
-
+        //End Fight Variables
         private Timer fightWonTimer = new Timer();
         private bool fightWon = false;
         private bool fightWonTimerStarted = false;
         private bool canPopFight = false;
-
         #endregion
 
         #region Damage Displaying Variables
-
+        //Timer
         private Timer displayDamageImageTimer = new Timer();
-
+        //Damage Variables
         private Sprite PlayerDamaged;
         private Sprite EnemyDamaged;
         private bool DamageTaken = false;
 
         #endregion
 
+        //Stage Variables
         private Stage.StageData stageData = new Stage.StageData(); //CREATE A NEW STAGEDATA LIST
         private string stageID;
         private Question lastQuest = new Question();
@@ -65,7 +60,7 @@ namespace concept_0_03
         float cdTimer = 0;
 
         #region Question Variables
-
+        //Question Variables
         private string optionOne;
         private string optionTwo;
         private string optionThree;
@@ -101,7 +96,7 @@ namespace concept_0_03
         private Rectangle comboBarBG;
         private Rectangle comboBar;
 
-        private bool comboDamage = false;
+        //private bool comboDamage = false;
         private int comboGauge = 0;
 
         //SPRITES
@@ -110,7 +105,6 @@ namespace concept_0_03
         private Sprite Enemy;
         #region Enemy Texture List
 
-        private Texture2D activeEnemyTexture;
 
         private Texture2D greenSlime;
         private Texture2D pinkSlime;
@@ -137,6 +131,7 @@ namespace concept_0_03
         private Button answerButton4;
         #endregion
 
+        //Overloaded Constructor
         public FightScreen(IGameScreenManager gameScreenManager, string stage_ID)
         {
             m_ScreenManager = gameScreenManager;
@@ -166,6 +161,7 @@ namespace concept_0_03
             #endregion
         }
 
+        //Overloaded Constructor
         public FightScreen(IGameScreenManager gameScreenManager, string m_currentWord, string m_questionWord)
         {
             m_ScreenManager = gameScreenManager;
@@ -184,10 +180,12 @@ namespace concept_0_03
 
         public void Init(ContentManager content)
         {
+            //Fonts and click variables
             SpriteFont m_font = content.Load<SpriteFont>("Fonts/Font");
             SpriteFont m_Japanese = content.Load<SpriteFont>("Fonts/Japanese");
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
+            //What Battle Music
             if (whichSongRand.Next(1,20) > 10)
             {
                 bgSong = content.Load<SoundEffect>("Music/InsidiaBattleLoop");
@@ -197,6 +195,7 @@ namespace concept_0_03
                 bgSong = content.Load<SoundEffect>("Music/LeviathanBattleLoop");
             }
 
+            //HP Bars
             HPTexture = content.Load<Texture2D>("Health/health");
             pHPBarBG = new Rectangle(pHPBarXPos - 3, hpBarYPos - 3, 256, 36);
             eHPBarBG = new Rectangle(eHPBarXPos - 3, hpBarYPos - 3, 256, 36);
@@ -250,7 +249,7 @@ namespace concept_0_03
             #endregion
 
             #region Music
-
+            //Changes and creates audio states
             switch (Game1.m_audioState)
             {
                 case Game1.AudioState.OFF:
@@ -276,6 +275,7 @@ namespace concept_0_03
 
             #endregion
 
+            //Background Elements
             Sprite ground = new Sprite(content.Load<Texture2D>("standingGround"))
             {
                 Position = new Vector2(0, 502)
@@ -298,9 +298,11 @@ namespace concept_0_03
             m_questionText.CenterHorizontal(800, 80);
             #endregion
 
+            //Timer creation
             Vector2 m_timerPosition = new Vector2(750, 5);
             m_TimerText = new Text(cdTimer.ToString(), m_Japanese, m_timerPosition, m_questionColor);
 
+            //Damage Effects for anyone is damaged
             #region Damage Displaying
 
             PlayerDamaged = new Sprite(content.Load<Texture2D>("BattleFX/playerHit_Small"))
@@ -317,6 +319,7 @@ namespace concept_0_03
 
             #endregion
 
+            //Answer Choice Buttons
             #region Answer Button 1
             answerButton1 = new Button(content.Load<Texture2D>("Menu/Red/red_button03"), m_Japanese)
             {
@@ -354,6 +357,7 @@ namespace concept_0_03
             answerButton4.Click += AnswerButton4_Click;
             #endregion
 
+            //List of components
             m_components = new List<Component>()
             {
 
@@ -375,6 +379,7 @@ namespace concept_0_03
             };
         }
 
+        //Creates a new question.
         private void SetNewQuestion()
         {
             //CREATE A NEW QUESITON
@@ -396,7 +401,7 @@ namespace concept_0_03
         }
 
         #region Click Methods
-
+        //Button Click functions
         private void Answer01_Pressed()
         {
             //click.Play();
@@ -446,8 +451,10 @@ namespace concept_0_03
         }
 
         #endregion
-        private void CheckAns(string ans) {
 
+        //Checks the Answer chosen and deals damage accordingly
+        private void CheckAns(string ans)
+        {
             if (!fightWon)
             {
                 if (ans == currentWord)
@@ -455,7 +462,11 @@ namespace concept_0_03
                     enemyHealth -= 5;
                     comboGauge += 1;
 
-                    if (comboGauge == 5) { EnemyDamaged.Colour = new Color(216, 14, 41, 150); }
+                    if (comboGauge == 5)
+                    {
+                        EnemyDamaged.Colour = new Color(216, 14, 41, 150);
+                        enemyHealth -= 3;
+                    }
                     else { EnemyDamaged.Colour = new Color(255, 255, 255, 255); }
                 }
                 else
@@ -493,7 +504,7 @@ namespace concept_0_03
 
         public void Update(GameTime gameTime)
         {
-
+            //Update components
             foreach (var component in m_components)
                 component.Update(gameTime);
       
@@ -552,10 +563,12 @@ namespace concept_0_03
             //IF FIGHTWON IS TRUE, DO FIGHT END STUFF
             if (fightWon == true)
             {
+                //Display Win Message
                 KeyFoundMessage();
                 m_questionText.Message = exitMessage;
-
                 m_questionText.CenterHorizontal(800,100);
+                
+                //Set Buttons to empty strings
                 answerButton1.Text = "";
                 answerButton2.Text = "";
                 answerButton3.Text = "";
@@ -595,8 +608,6 @@ namespace concept_0_03
 
         private void FightWonTimer_Elapsed(object sender, ElapsedEventArgs e)
         {
-            
-
             // SET CANPOP VARIABLE TO TRUE
             canPopFight = true;
         }
@@ -614,6 +625,7 @@ namespace concept_0_03
             canAnswer = true;
         }
 
+        //Displays the enemy based on a string.
         private void SetEnemyTexture(string enemy)
         {
             switch (enemy)
@@ -661,19 +673,17 @@ namespace concept_0_03
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin();    //Begin SpriteBatch
 
-            /*
-            m_eHealthText.Draw(spriteBatch);
-            m_pHealthText.Draw(spriteBatch);
-            */
-
+            //Draw all components to screen
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
 
-            m_questionText.Draw(spriteBatch);
-            m_TimerText.Draw(spriteBatch);
+            //Draw other items
+            m_questionText.Draw(spriteBatch);   //Question
+            m_TimerText.Draw(spriteBatch);      //Timer
 
+            //Draw other UI elements
             spriteBatch.Draw(HPTexture, pHPBarBG, Color.Black);
             spriteBatch.Draw(HPTexture, eHPBarBG, Color.Black);
             spriteBatch.Draw(HPTexture, comboBarBG, Color.Black);
@@ -681,7 +691,7 @@ namespace concept_0_03
             spriteBatch.Draw(HPTexture, enemyHPBar, Color.White);
             spriteBatch.Draw(HPTexture, comboBar, Color.White);
 
-            spriteBatch.End();
+            spriteBatch.End();    //End SpriteBatch
         }
 
         public void HandleInput(GameTime gameTime)
@@ -699,6 +709,7 @@ namespace concept_0_03
             }
 
             #region Answer on Button Press
+            //Button Press Decision.
             if (canAnswer)
             {
                 if ((oldState.IsKeyUp(Keys.W) && keyboard.IsKeyDown(Keys.W)) || (oldState.IsKeyUp(Keys.Up) && keyboard.IsKeyDown(Keys.Up)))
@@ -726,8 +737,6 @@ namespace concept_0_03
                     canAnswerTimer.Start();
                 }
             }
-            
-            
             #endregion
 
             oldState = keyboard;
@@ -741,7 +750,6 @@ namespace concept_0_03
         #region Display You Got A Key Kunctions
         //Variables
         private bool doOnce = false;
-        private bool keyFound = false;
         private string color = "";
         private string exitMessage = "";
 

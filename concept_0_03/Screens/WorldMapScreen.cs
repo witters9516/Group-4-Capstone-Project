@@ -12,42 +12,44 @@ namespace concept_0_03
 {
     class WorldMapScreen : IGameScreen
     {
+        //Standard Game Screen Variables
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
         private Command m_command;
-
         public bool IsPaused { get; private set; }
-
         private List<Component> m_components;
 
         //Buttons and Variables for them.
         Texture2D buttonTexture;
         SpriteFont buttonFont;
 
-        #region Music & Sound Effect Variables
-        private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
-        private SoundEffect click;
+        //Key Inventory Variables
+        public static KeyInventory keyInventory = new KeyInventory();
+        private Button KeyGalleryButton;
 
-        private bool isMusicStopped = false;
+        //SaveDataFiles
+        public static SavedDataFile SaveFile1;
+        public static SavedDataFile SaveFile2;
+        public static SavedDataFile SaveFile3;
+
+        #region Music & Sound Effect Variables
+        //Music Variables
+        private SoundEffect bgSong;
+        private SoundEffect click;
         #endregion
 
+        //Other Variables to be used.
         private int currentLevel = 0;
         private Timer moveToNextLevel = new Timer();
         bool justMovedToNextLevel = false;
-
         private int currentWorld = 1;
         private Sprite background;
-
         private Texture2D mapOne;
         private Texture2D mapTwo;
         private Texture2D mapThree;
 
-        public static KeyInventory keyInventory = new KeyInventory();
-        private Button KeyGalleryButton;
-
         #region Level Entrance and Player Variables
-
+        //Characters to be displayed on screen
         private Player Player;
         private Sprite Companion;
 
@@ -96,15 +98,55 @@ namespace concept_0_03
 
         #endregion
 
+        //Constructor
         public WorldMapScreen(IGameScreenManager gameScreenManager)
         {
+            //Set Manage and Command
             m_ScreenManager = gameScreenManager;
             m_command = new Command(m_ScreenManager);
 
-            #region Timer Stuff
-            
-            moveToNextLevel.Interval = 500;
+            //Set To True
+            Game1.isOnWorldMap = true;
 
+            #region Load Saved Data
+            //Load Game Data based on Game1.opener
+            switch (Game1.opener)
+            {
+                case 1:
+                    SaveFile1 = LoadInformation.LoadSavedInformation(new SavedDataFile(1), 1);
+                    Game1.levelsUnlocked = SaveFile1.GetLevelsUnlocked();
+                    GetPlayerTextures(SaveFile1.GetWhichCharacter());
+                    if (SaveFile1.GetObtainedGoldenKeys().Count != 0)
+                        keyInventory.SetGoldKeyList(SaveFile1.GetObtainedGoldenKeys());
+                    if (SaveFile1.GetObtainedSilverKeys().Count != 0)
+                        keyInventory.SetSilverKeyList(SaveFile1.GetObtainedSilverKeys());
+                    break;
+                case 2:
+                    SaveFile2 = LoadInformation.LoadSavedInformation(new SavedDataFile(2), 2);
+                    Game1.levelsUnlocked = SaveFile2.GetLevelsUnlocked();
+                    GetPlayerTextures(SaveFile2.GetWhichCharacter());
+                    if (SaveFile2.GetObtainedGoldenKeys().Count != 0)
+                        keyInventory.SetGoldKeyList(SaveFile2.GetObtainedGoldenKeys());
+                    if (SaveFile2.GetObtainedSilverKeys().Count != 0)
+                        keyInventory.SetSilverKeyList(SaveFile2.GetObtainedSilverKeys());
+                    break;
+                case 3:
+                    SaveFile3 = LoadInformation.LoadSavedInformation(new SavedDataFile(3), 3);
+                    Game1.levelsUnlocked = SaveFile3.GetLevelsUnlocked();
+                    GetPlayerTextures(SaveFile3.GetWhichCharacter());
+                    if(SaveFile3.GetObtainedGoldenKeys().Count != 0)
+                        keyInventory.SetGoldKeyList(SaveFile3.GetObtainedGoldenKeys());
+                    if(SaveFile3.GetObtainedSilverKeys().Count != 0)
+                        keyInventory.SetSilverKeyList(SaveFile3.GetObtainedSilverKeys());
+                    break;
+                default:
+                    break;
+            }
+            #endregion
+
+            #region Timer Stuff
+            //Set interval
+            moveToNextLevel.Interval = 500;
             #endregion
         }
 
@@ -118,6 +160,8 @@ namespace concept_0_03
 
         public void Init(ContentManager content)
         {
+            //initialize opening change.
+
             //Set Click Sound Effect
             click = content.Load<SoundEffect>("SFX/Select_Click");
 
@@ -129,13 +173,13 @@ namespace concept_0_03
             KeyGalleryButton = CreateButton(new Vector2(0, 550), "Key Gallery");
             KeyGalleryButton.Click += KeyGalleryButton_Click;
 
+            //Load Font, Click, and Battle Game Music
             SpriteFont m_font = content.Load<SpriteFont>("Fonts/Font");
             click = content.Load<SoundEffect>("SFX/Select_Click");
-
             bgSong = content.Load<SoundEffect>("Music/WorldMapLoop");
 
             #region Music
-
+            //Set Audio State and music
             switch (Game1.m_audioState)
             {
                 case Game1.AudioState.OFF:
@@ -163,16 +207,18 @@ namespace concept_0_03
             #endregion
 
             #region Set Map Textures
-
+            //Set Map Textures
             mapOne = content.Load<Texture2D>("WorldMap/map");
             mapTwo = content.Load<Texture2D>("WorldMap/map2");
             mapThree = content.Load<Texture2D>("WorldMap/map3");
-
             #endregion
 
+            //Background Set
             background = new Sprite(mapOne);
+            //Level Entrace set
             Texture2D levelEntrance = content.Load<Texture2D>("WorldMap/levelEntrance");
 
+            //Set Player
             Player = new Player(Game1.activePlayerTexture)
             {
                 playerCanMove = false,
@@ -180,7 +226,7 @@ namespace concept_0_03
             };
 
             #region Level Entrance Rendering
-
+            //Set Level Entrances on each world.
             #region World One
             #region Level One
 
@@ -427,11 +473,13 @@ namespace concept_0_03
             #endregion
             #endregion
 
+            //Set Companion
             Companion = new Sprite(content.Load<Texture2D>("NPCs/carl"))
             {
                 Position = new Vector2(LevelOne.Position.X + 50, LevelOne.Position.Y + 2)
             };
 
+            //List Of Components
             m_components = new List<Component>()
             {
                 background,
@@ -601,14 +649,13 @@ namespace concept_0_03
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin();    //Begin SpriteBatch
 
+            //Draw all components to screen
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
 
-            
-
-            spriteBatch.End();
+            spriteBatch.End();    //End SpriteBatch
         }
 
         public void HandleInput(GameTime gameTime)
@@ -1021,6 +1068,7 @@ namespace concept_0_03
             #endregion
         }
 
+        //Move the player
         private void MovePlayer(int _newLevel)
         {
             currentLevel = _newLevel;
@@ -1029,6 +1077,7 @@ namespace concept_0_03
             moveToNextLevel.Start();
         }
 
+        //Change the world the player is on.
         private void ChangeWorld(int _newWorld)
         {
             switch (_newWorld)
@@ -1198,6 +1247,7 @@ namespace concept_0_03
 
         #region Key Gallery Stuff
         #region Create Button Function
+        //Quick Button Creation
         private Button CreateButton(Vector2 v2, string text)
         {
             Button tempButton = new Button(buttonTexture, buttonFont)
@@ -1219,6 +1269,30 @@ namespace concept_0_03
         }
         #endregion
         #endregion
-
+        #region LoadData Stuff
+        //Loads the textures of the player
+        private void GetPlayerTextures(int i)
+        {
+            switch (i)
+            {
+                case 1:
+                    Game1.activePlayerTexture = Game1.charaOne_World;
+                    Game1.activePlayer_FightTexture = Game1.charaOne_Fight;
+                    break;
+                case 2:
+                    Game1.activePlayerTexture = Game1.charaTwo_World;
+                    Game1.activePlayer_FightTexture = Game1.charaTwo_Fight;
+                    break;
+                case 3:
+                    Game1.activePlayerTexture = Game1.charaThree_World;
+                    Game1.activePlayer_FightTexture = Game1.charaThree_Fight;
+                    break;
+                default:
+                    Game1.activePlayerTexture = Game1.charaOne_World;
+                    Game1.activePlayer_FightTexture = Game1.charaOne_Fight;
+                    break;
+            }
+        }
+        #endregion
     }
 }

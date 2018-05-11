@@ -12,26 +12,21 @@ namespace concept_0_03
 {
     class MenuScreen : IGameScreen
     {
+        //Screen Variables
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
         private Command m_command;
-
         private Text m_titleText;
         private List<Component> m_components;
         private SoundEffect click;
-
         private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
-        private bool isMusicStopped = false;
-
         public bool IsPaused { get; private set; }
 
         #region Touch Input Testing -- Nonfunctional
-
         TouchCollection touchCollection;
-
         #endregion
 
+        //Constructor
         public MenuScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
@@ -49,28 +44,28 @@ namespace concept_0_03
         public void Init(ContentManager content)
         {
             #region Touch Input Testing -- Nonfunctional
-            
             TouchPanel.EnabledGestures = GestureType.Tap | GestureType.DoubleTap;
-
             #endregion
 
+            //Font loaded
             SpriteFont m_font = content.Load <SpriteFont>("Fonts/TitleFont");
+            //Load Click and Battle Game Music
             click = content.Load<SoundEffect>("SFX/Select_Click");
-
             bgSong = content.Load<SoundEffect>("Music/GoodMemories");
-
+            //Battle game music variables set.
             Game1.currentInstance = bgSong.CreateInstance();
             Game1.currentInstance.IsLooped = true;
             Game1.currentInstance.Volume = Game1.musicVolume;
-
             Game1.m_audioState = Game1.AudioState.PLAYING;
             Game1.currentInstance.Play();
 
+            //Background Sprite
             var screenBackground = new Sprite(content.Load<Texture2D>("BGs/bgMountains"))
             {
                 Position = new Vector2(-100, -2)
             };
 
+            //Title Variables
             #region Title Stuff
             string titleText = "Japakeys";
             var x = (800 / 2) - (m_font.MeasureString(titleText).X / 2);
@@ -82,12 +77,12 @@ namespace concept_0_03
             #endregion
 
             #region Button Variables
-
+            //Button Textures
             var buttonTexture = content.Load<Texture2D>("Menu/Grey/grey_button04");
             var buttonFont = content.Load<SpriteFont>("Fonts/Font");
-
             #endregion
 
+            //In Game Buttons
             #region New Game Button
 
             var newGameButton = new Button(buttonTexture, buttonFont)
@@ -133,6 +128,7 @@ namespace concept_0_03
 
             #endregion
 
+            //List of Components
             m_components = new List<Component>()
             {
                 screenBackground,
@@ -215,14 +211,15 @@ namespace concept_0_03
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin();    //Begin SpriteBatch
 
+            //Draw all components to screen
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
 
             m_titleText.Draw(spriteBatch);
 
-            spriteBatch.End();
+            spriteBatch.End();    //End SpriteBatch
         }
 
         public void Update(GameTime gameTime)

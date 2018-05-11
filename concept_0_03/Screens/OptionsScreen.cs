@@ -142,21 +142,22 @@ namespace concept_0_03
             GetMusicVolume();
         }
 
+        //Get Music Volume and Display volume level.
         public void GetMusicVolume()
         {
             currentVolume = Game1.musicVolume * 100;
-
             musicButton.Text = "Music: " + currentVolume.ToString() + "%";
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
+            spriteBatch.Begin();    //Begin SpriteBatch
 
+            //Draw all components to screen
             foreach (var component in m_components)
                 component.Draw(gameTime, spriteBatch);
 
-            spriteBatch.End();
+            spriteBatch.End();    //End SpriteBatch
         }
 
         public void HandleInput(GameTime gameTime)
@@ -167,13 +168,6 @@ namespace concept_0_03
             {
                 m_exitGame = true;
             }
-            
-            /*
-            if (oldState.IsKeyUp(Keys.Back) && keyboard.IsKeyDown(Keys.Back))
-            {
-                m_ScreenManager.PopScreen();
-            }
-            */
 
             oldState = keyboard;
         }

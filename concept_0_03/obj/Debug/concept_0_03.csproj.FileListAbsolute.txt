@@ -1984,11 +1984,6 @@ C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderLeft.xnb
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderRight.xnb
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Menu\Red\red_sliderUp.xnb
-C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Bit Quest.xnb
-C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Carpe Diem.xnb
-C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Off to Osaka.xnb
-C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Pixelland.xnb
-C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\Reformat.xnb
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\NPCs\carl.xnb
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\NPCs\Carl_Fight.xnb
 C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Player\player01_Fight.xnb
@@ -2287,3 +2282,15 @@ C:\Users\Mio\Downloads\Group-4-Capstone-Project-master (1)\Group-4-Capstone-Proj
 C:\Users\Mio\Downloads\Group-4-Capstone-Project-master (1)\Group-4-Capstone-Project-master\concept_0_03\obj\Debug\concept_0_03.csproj.CoreCompileInputs.cache
 C:\Users\Mio\Downloads\Group-4-Capstone-Project-master (1)\Group-4-Capstone-Project-master\concept_0_03\obj\Debug\concept_0_03.exe
 C:\Users\Mio\Downloads\Group-4-Capstone-Project-master (1)\Group-4-Capstone-Project-master\concept_0_03\obj\Debug\concept_0_03.pdb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\LoadFile\LoadFile1.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\LoadFile\LoadFile2.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\LoadFile\LoadFile3.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\LoadFile\LoadFileTitle.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\GoodMemories.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\InsidiaBattleLoop.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\LeviathanBattleLoop.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\ReflectionsInTranquilityLoop.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\RestBeneathTheTree.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\SweetDreamsNonLoop.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\Music\WorldMapLoop.xnb
+C:\Users\User\Documents\GitHub\G4CP\Group-4-Capstone-Project-Shawn\concept_0_03\bin\DesktopGL\AnyCPU\Debug\Content\LoadFile\SaveFileTitle.xnb

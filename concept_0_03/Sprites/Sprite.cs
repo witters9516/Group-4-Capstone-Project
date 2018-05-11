@@ -5,15 +5,12 @@ namespace concept_0_03
 {
     public class Sprite : Component
     {
+        //Fields
         public Texture2D Texture;
-
         public Vector2 Position;
-
         public Vector2 Velocity = new Vector2();
         public float Speed;
-
         public Color Colour = Color.White;
-
         public Rectangle Rectangle
         {
             get { return new Rectangle((int)Position.X, (int)Position.Y, Texture.Width, Texture.Height); }
@@ -25,6 +22,7 @@ namespace concept_0_03
             spriteBatch.Draw(Texture, Position, Colour);
         }
 
+        //Constructor
         public Sprite(Texture2D texture)
         {
             Texture = texture;
@@ -35,9 +33,8 @@ namespace concept_0_03
 
         }
 
-
         #region Collision
-
+        //Check Left Area Collision
         protected bool IsTouchingLeft(Sprite sprite)
         {
             return this.Rectangle.Right + this.Velocity.X > sprite.Rectangle.Left &&
@@ -46,6 +43,7 @@ namespace concept_0_03
                 this.Rectangle.Top < sprite.Rectangle.Bottom;
         }
 
+        //Check Right Area Collision
         protected bool IsTouchingRight(Sprite sprite)
         {
             return this.Rectangle.Left + this.Velocity.X < sprite.Rectangle.Right &&
@@ -54,6 +52,7 @@ namespace concept_0_03
                 this.Rectangle.Top < sprite.Rectangle.Bottom;
         }
 
+        //Check Top Area Collision
         protected bool IsTouchingTop(Sprite sprite)
         {
             return this.Rectangle.Bottom + this.Velocity.Y > sprite.Rectangle.Top &&
@@ -62,6 +61,7 @@ namespace concept_0_03
                 this.Rectangle.Left < sprite.Rectangle.Right;
         }
 
+        //Check Bottom Area Collision
         protected bool IsTouchingBottom(Sprite sprite)
         {
             return this.Rectangle.Top + this.Velocity.Y < sprite.Rectangle.Bottom &&
@@ -69,7 +69,6 @@ namespace concept_0_03
                 this.Rectangle.Right > sprite.Rectangle.Left &&
                 this.Rectangle.Left < sprite.Rectangle.Right;
         }
-
         #endregion
     }
 }

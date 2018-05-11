@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace concept_0_03
 {
-    class GalleryScreen : IGameScreen
+    class StandardGameScreen : IGameScreen
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
@@ -19,11 +19,10 @@ namespace concept_0_03
         public bool IsPaused { get; private set; }
 
         private List<Component> m_components;
-        private SoundEffect click;
 
         // Add variables that need to be updated in update here
 
-        public GalleryScreen(IGameScreenManager gameScreenManager)
+        public StandardGameScreen(IGameScreenManager gameScreenManager)
         {
             m_ScreenManager = gameScreenManager;
         }

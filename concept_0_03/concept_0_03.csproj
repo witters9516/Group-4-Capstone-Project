@@ -65,7 +65,11 @@
     <Compile Include="Key Gallery\KeyClass.cs" />
     <Compile Include="Key Gallery\KeyGalleryMain.cs" />
     <Compile Include="Key Gallery\KeyInventory.cs" />
-    <Compile Include="Screens\GalleryScreen.cs" />
+    <Compile Include="SavingAndLoading\LoadInformation.cs" />
+    <Compile Include="SavingAndLoading\SavedDataFile.cs" />
+    <Compile Include="SavingAndLoading\SaveFileScreen.cs" />
+    <Compile Include="SavingAndLoading\SaveInformation.cs" />
+    <Compile Include="ScriptsNotUsed\StandardGameScreen.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -79,8 +83,9 @@
     <Compile Include="Game1.cs" />
     <Compile Include="GameScreenManager.cs" />
     <Compile Include="Interfaces.cs" />
+    <Compile Include="SavingAndLoading\LoadFileScreen.cs" />
     <Compile Include="Screens\OptionsScreen.cs" />
-    <Compile Include="Screens\LevelOneScreen.cs" />
+    <Compile Include="ScriptsNotUsed\LevelOneScreen.cs" />
     <Compile Include="Screens\MenuScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,7 +97,7 @@
     <Compile Include="Screens\WorldMapScreen.cs" />
     <Compile Include="Stage\StageBuild.cs" />
     <Compile Include="Stage\StageData.cs" />
-    <Compile Include="Screens\WorldKeyDisplay.cs" />
+    <Compile Include="Key Gallery\WorldKeyDisplay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

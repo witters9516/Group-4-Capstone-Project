@@ -13,19 +13,13 @@ namespace concept_0_03
     {
         private bool m_exitGame;
         private readonly IGameScreenManager m_ScreenManager;
-
         private List<Component> m_components;
         private SoundEffect click;
-
         private SoundEffect bgSong;
-        private SoundEffectInstance bgMusic;
         private bool isMusicStopped = false;
         private bool wasOptionsOpen = false;
-        private bool wasFightOpen = false;
         private bool fightStarted = false;
-
         private int numOfEnemies = 3;
-
         private Player Player;
         private Sprite Obstacle;
 
@@ -34,9 +28,7 @@ namespace concept_0_03
         private Rectangle enemyOneBounds = new Rectangle(150, 250, 200, 200);
         private int enemyMovementLeftRight;
         private int enemyMovementUpDown;
-        bool enemyOneDefeated = false;
 
-        bool getNewRandom = false;
         #endregion
 
         private Random random1 = new Random(Guid.NewGuid().GetHashCode());
@@ -136,23 +128,6 @@ namespace concept_0_03
             foreach (var component in m_components)
                 component.Update(gameTime);
 
-            #region Player Intersecting Stuff
-            /*
-            if (Player.Rectangle.Intersects(Obstacle.Rectangle))
-            {
-                bgMusic.Pause();
-                isMusicStopped = true;
-                m_ScreenManager.PushScreen(new FightScreen(m_ScreenManager));
-                enemyOneDefeated = true;
-
-                Player.Position = new Vector2(Player.Position.X + 5, Player.Position.Y);
-                Obstacle.Position = new Vector2(-30, -50);
-
-                wasFightOpen = true;
-            }
-            */
-            #endregion
-
             if (fightStarted == false)
             {
                 fightStartTimer.Elapsed += new ElapsedEventHandler(StartFight);
@@ -184,75 +159,6 @@ namespace concept_0_03
                 isMusicStopped = false;
                 wasOptionsOpen = false;
             }
-
-            #region Enemy One Movement -- CURRENTLY DISABLED
-            /*
-            
-
-            if (Obstacle.Position.X > enemyOneBounds.Left && Obstacle.Position.Y > enemyOneBounds.Top &&
-                Obstacle.Position.X < enemyOneBounds.Right && Obstacle.Position.Y < enemyOneBounds.Bottom)
-            {
-                timer.Elapsed += new ElapsedEventHandler(GetNewRandom);
-
-                if (getNewRandom == true)
-                {
-                    enemyMovementLeftRight = random1.Next(1, 21);
-                    enemyMovementUpDown = random2.Next(1, 21);
-                    getNewRandom = false;
-
-                }
-
-                if (enemyMovementLeftRight < 6)
-                {
-                    if (Obstacle.Position.X < enemyOneBounds.Right - 2)
-                    {
-                        enemyOnePosition.X += 2;
-                    }
-                    else
-                    {
-                        enemyMovementLeftRight = random1.Next(1, 21);
-                    }
-                }
-                else if (enemyMovementLeftRight >= 16)
-                {
-                    if (Obstacle.Position.X > enemyOneBounds.Left + 2)
-                    {
-                        enemyOnePosition.X -= 2;
-                    }
-                    else
-                    {
-                        enemyMovementLeftRight = random1.Next(1, 21);
-                    }
-                }
-
-                if (enemyMovementUpDown >= 11 && enemyMovementUpDown < 16)
-                {
-                    if (Obstacle.Position.Y < enemyOneBounds.Bottom - 2)
-                    {
-                        enemyOnePosition.Y += 2;
-                    }
-                    else
-                    {
-                        enemyMovementUpDown = random2.Next(1, 21);
-                    }
-                }
-                else if (enemyMovementUpDown >= 6 && enemyMovementUpDown < 11)
-                {
-                    if (Obstacle.Position.Y > enemyOneBounds.Top + 2)
-                    {
-                        enemyOnePosition.Y -= 2;
-                    }
-                    else
-                    {
-                        enemyMovementUpDown = random2.Next(1, 21);
-                    }
-                }
-
-                Obstacle.Position = enemyOnePosition;
-            }
-
-            */
-            #endregion
         }
 
         private void StartFight(object sender, ElapsedEventArgs e)
@@ -264,12 +170,6 @@ namespace concept_0_03
 
             isMusicStopped = true;
 
-            wasFightOpen = true;
-        }
-
-        private void GetNewRandom(object sender, ElapsedEventArgs e)
-        {
-            getNewRandom = true;
         }
 
         public void Draw(GameTime gameTime, SpriteBatch spriteBatch)

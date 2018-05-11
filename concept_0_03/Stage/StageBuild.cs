@@ -8,7 +8,7 @@ namespace concept_0_03.Stage
 {
     class StageBuild
     {
-
+        //StageBuild Data
         private string id;  //ex: 2-1
         private string alphabet; //ex: kata
         private string name; //ex: Tsuki Mountain
@@ -25,16 +25,19 @@ namespace concept_0_03.Stage
         private List<string> charContent = new List<string> { }; //ex: "ka", "ki", "ku", "ke", "ko"
         private List<Alphabet.JapChar> currentSet = new List<Alphabet.JapChar> { };
 
+        //Constructor
         public StageBuild() {}
 
+        //This method adds specific questions that will be asked during a battle.
         public void SetCurrentSet(List<string> tag)
         {
+            Alphabet.JapChar alpha; //Create a object.
 
-            Alphabet.JapChar alpha;
-
+            //Chheck what alphabet to look at
             if (alphabet == "hira") { alpha = new Alphabet.HiraAlphabet(); }
             else { alpha = new Alphabet.KataAlphabet(); }
 
+            //Loops to add specific questions to a list.
             foreach (string t in tag)
             {
                 Alphabet.JapChar result = alpha.CharList.Find(x => x.VowelSet == t);
@@ -46,18 +49,16 @@ namespace concept_0_03.Stage
 
                 while (result != null)
                 {
-                    
                     result = alpha.CharList.Find(x => x.VowelSet == t);
                     if (result != null) 
                     {
                         alpha.CharList.Remove(result);
                         currentSet.Add(result);
                     }
-                    
                 }
 
-
                 result = alpha.CharList.Find(x => x.ConsonantSet == t);
+
                 if (result != null)
                 {
                     alpha.CharList.Remove(result);
@@ -65,18 +66,17 @@ namespace concept_0_03.Stage
                 }
                 while (result != null)
                 {
-                    
                     result = alpha.CharList.Find(x => x.ConsonantSet == t);
                     if (result != null)
                     {
                         alpha.CharList.Remove(result);
                         currentSet.Add(result);
                     }
-                    
                 }
             }
         }
 
+        //Public Getters and Setters
         public string ID { get { return id; } set { id = value; } }
         public string Alphabet { get { return alphabet; } set { alphabet = value; } }
         public string Name { get { return name; } set { name = value; } }

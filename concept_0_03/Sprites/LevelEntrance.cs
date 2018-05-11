@@ -10,17 +10,19 @@ namespace concept_0_03
 {
     class LevelEntrance : Component
     {
+        //Fields
         public Texture2D _texture;
         public Vector2 Position;
         public String LevelName = "0-0";
-
         public Color Colour = Color.White;
 
+        //Overloaded Constructor
         public LevelEntrance(Texture2D texture)
         {
             _texture = texture;
         }
 
+        // Overloaded Constructor
         public LevelEntrance(Texture2D texture, Vector2 position, String levelName)
         {
             _texture = texture;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Mio/Downloads/Group-4-Capstone-Project-master (1)/Group-4-Capstone-Project-master/concept_0_03/Content/Music/WorldMapLoop.mp3</SourceFile>
-  <SourceTime>2018-05-09T21:31:13.7343187-04:00</SourceTime>
-  <DestFile>C:/Users/Mio/Downloads/Group-4-Capstone-Project-master (1)/Group-4-Capstone-Project-master/concept_0_03/Content/bin/DesktopGL/Music/WorldMapLoop.xnb</DestFile>
-  <DestTime>2018-05-09T21:34:28.6306209-04:00</DestTime>
+  <SourceFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/Music/WorldMapLoop.mp3</SourceFile>
+  <SourceTime>2018-05-09T22:21:39.8883377-04:00</SourceTime>
+  <DestFile>C:/Users/User/Documents/GitHub/G4CP/Group-4-Capstone-Project-Shawn/concept_0_03/Content/bin/DesktopGL/Music/WorldMapLoop.xnb</DestFile>
+  <DestTime>2018-05-10T01:14:37.9859309-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2017-03-01T10:05:36-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
